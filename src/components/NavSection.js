@@ -4,6 +4,8 @@ import styled from "styled-components"
 import { animated, useSpring } from "react-spring"
 import { colours } from "../utils/colours"
 import { debounce } from "../utils/debounce"
+import Boop from "./Boop"
+import { Link } from "gatsby"
 
 const NavContainer = styled.div`
   margin: 0 auto;
@@ -21,22 +23,34 @@ const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  h2 {
+  a {
     user-select: none;
-  }
-  span {
-    color: ${colours.yellow};
+    cursor: pointer;
+    color: #fafafa;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 1.5rem;
   }
 `
 
 const HiddenMenu = styled.div`
   position: fixed;
-  left: 100vw;
+  left: 200vw;
   top: 0;
   height: 100vh;
   width: 100vw;
   background-color: pink;
-  transition: 0.6s linear all;
+  transition: 1s linear all;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  span {
+    margin: 0.5rem;
+    a {
+      font-size: 2rem;
+    }
+  }
   /* transform: translate(100vw, 0px); */
 `
 
@@ -46,7 +60,7 @@ const NavSection = () => {
   const [visible, setVisible] = useState(true)
 
   const style = useSpring({
-    transform: "translate(-100vw, 0)",
+    transform: "translate(-200vw, 0)",
   })
 
   const handleScroll = debounce(() => {
@@ -70,10 +84,44 @@ const NavSection = () => {
   return (
     <NavContainer style={{ top: visible ? "0" : "-100px" }}>
       <Nav>
-        <h2>
-          roo<span>_</span>dev
-        </h2>
-        <HiddenMenu as={animated.div} style={toggled ? style : {}} />
+        <Boop rotation={10} timing={100}>
+          <Link to="/">
+            roo<span style={{ color: colours.yellow }}>_</span>dev
+          </Link>
+        </Boop>
+
+        <HiddenMenu as={animated.div} style={toggled ? style : {}}>
+          <Boop rotation={10} timing={100}>
+            <Link
+              to="/#about"
+              onClick={() => {
+                setToggled(!toggled)
+              }}
+            >
+              about
+            </Link>
+          </Boop>
+          <Boop rotation={10} timing={100}>
+            <Link
+              to="/#work"
+              onClick={() => {
+                setToggled(!toggled)
+              }}
+            >
+              work
+            </Link>
+          </Boop>
+          <Boop rotation={10} timing={100}>
+            <Link
+              to="/#contact"
+              onClick={() => {
+                setToggled(!toggled)
+              }}
+            >
+              contact
+            </Link>
+          </Boop>
+        </HiddenMenu>
         <NavBurger toggled={toggled} setToggled={setToggled} />
       </Nav>
     </NavContainer>

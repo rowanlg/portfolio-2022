@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { useSpring, animated } from "react-spring"
 import styled from "styled-components"
 import { colours } from "../utils/colours"
+import Boop from "./Boop"
 
 const Burger = styled.div`
   cursor: pointer;
@@ -11,13 +12,17 @@ const Burger = styled.div`
   transform: rotate(25deg);
   div {
     position: absolute;
-    width: 50px;
-    height: 5px;
+    width: 40px;
+    height: 4px;
     top: 50%;
     text-align: center;
     border-radius: 1rem;
     transform-origin: 50%;
     transition: 1s linear all;
+    @media screen and (min-width: 500px) {
+      width: 50px;
+      height: 5px;
+    }
   }
   div:nth-child(1) {
     background-color: ${colours.red};
@@ -47,17 +52,19 @@ const NavBurger = ({ toggled, setToggled }) => {
   })
 
   return (
-    <Burger
-      onClick={() => {
-        setToggled(!toggled)
-        console.log("toggled")
-      }}
-    >
-      <animated.div style={toggled ? style : {}} />
-      <animated.div style={toggled ? style : {}} />
-      <animated.div style={toggled ? style45 : {}} />
-      <animated.div style={toggled ? style45 : {}} />
-    </Burger>
+    <Boop rotation={10} timing={200}>
+      <Burger
+        onClick={() => {
+          setToggled(!toggled)
+          console.log("toggled")
+        }}
+      >
+        <animated.div style={toggled ? style : {}} />
+        <animated.div style={toggled ? style : {}} />
+        <animated.div style={toggled ? style45 : {}} />
+        <animated.div style={toggled ? style45 : {}} />
+      </Burger>
+    </Boop>
   )
 }
 
