@@ -1,14 +1,17 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import NavBurger from "./NavBurger"
 import styled from "styled-components"
 import { animated, useSpring } from "react-spring"
 import { colours } from "../utils/colours"
+import { debounce } from "../utils/debounce"
 
 const NavContainer = styled.div`
   margin: 0 auto;
   width: 100vw;
   background-color: ${colours.dark};
-  position: sticky;
+  position: fixed;
+  top: 0;
+  transition: 0.2s linear all;
 `
 
 const Nav = styled.nav`
@@ -39,13 +42,33 @@ const HiddenMenu = styled.div`
 
 const NavSection = () => {
   const [toggled, setToggled] = useState(false)
+  const [prevScrollPos, setPrevScrollPos] = useState(0)
+  const [visible, setVisible] = useState(true)
 
   const style = useSpring({
     transform: "translate(-100vw, 0)",
   })
 
+  const handleScroll = debounce(() => {
+    const currentScrollPos = window.pageYOffset
+
+    setVisible(
+      toggled
+        ? true
+        : (prevScrollPos > currentScrollPos &&
+            prevScrollPos - currentScrollPos > 70) ||
+            currentScrollPos < 10
+    )
+    setPrevScrollPos(currentScrollPos)
+  }, 100)
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [prevScrollPos, visible, handleScroll])
+
   return (
-    <NavContainer>
+    <NavContainer style={{ top: visible ? "0" : "-100px" }}>
       <Nav>
         <h2>
           roo<span>_</span>dev

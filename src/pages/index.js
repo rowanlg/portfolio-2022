@@ -6,7 +6,7 @@ import { colours } from "../utils/colours"
 
 const Main = styled.main`
   background-color: ${colours.dark};
-  height: 100vh;
+  height: 200vh;
   color: ${colours.light};
 `
 
