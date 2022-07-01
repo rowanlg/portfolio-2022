@@ -4,6 +4,7 @@ import styled from "styled-components"
 import "../index.css"
 import { colours } from "../utils/colours"
 import MainSection from "../components/MainSection"
+import WorkSection from "../components/WorkSection"
 
 const Main = styled.main`
   background-color: ${colours.dark};
@@ -13,9 +14,10 @@ const Main = styled.main`
 
 export default function Home() {
   return (
-    <Main>
+    <Main id="about">
       <NavSection />
       <MainSection />
+      <WorkSection />
     </Main>
   )
 }

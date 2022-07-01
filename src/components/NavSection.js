@@ -18,7 +18,7 @@ const NavContainer = styled.div`
 
 const Nav = styled.nav`
   margin: 0 auto;
-  width: 70vw;
+  width: 85vw;
   height: 100px;
   display: flex;
   justify-content: space-between;
@@ -30,6 +30,22 @@ const Nav = styled.nav`
     text-decoration: none;
     font-weight: 800;
     font-size: 1.5rem;
+    span.dot {
+      opacity: 0;
+      margin-left: 0;
+      transition: all 1s ease-out;
+      color: ${colours.red};
+    }
+    :hover {
+      span.dot {
+        opacity: 100;
+        transition: 0s;
+      }
+    }
+  }
+
+  @media screen and (min-width: 1000px) {
+    width: 70vw;
   }
 `
 
@@ -48,7 +64,21 @@ const HiddenMenu = styled.div`
   span {
     margin: 0.5rem;
     a {
-      font-size: 2rem;
+      font-size: 1.5rem;
+      @media screen and (min-width: 1000px) {
+        font-size: 2rem;
+      }
+      span {
+        opacity: 0;
+        margin-left: 0;
+        transition: all 1s ease-out;
+      }
+      :hover {
+        span {
+          opacity: 100;
+          transition: 0s;
+        }
+      }
     }
   }
   /* transform: translate(100vw, 0px); */
@@ -87,6 +117,7 @@ const NavSection = () => {
         <Boop rotation={10} timing={100}>
           <Link to="/">
             roo<span style={{ color: colours.yellow }}>_</span>dev
+            <span className="dot">.</span>
           </Link>
         </Boop>
 
@@ -98,7 +129,7 @@ const NavSection = () => {
                 setToggled(!toggled)
               }}
             >
-              about
+              about<span>.</span>
             </Link>
           </Boop>
           <Boop rotation={10} timing={100}>
@@ -108,7 +139,7 @@ const NavSection = () => {
                 setToggled(!toggled)
               }}
             >
-              work
+              work<span>.</span>
             </Link>
           </Boop>
           <Boop rotation={10} timing={100}>
@@ -118,7 +149,7 @@ const NavSection = () => {
                 setToggled(!toggled)
               }}
             >
-              contact
+              contact<span>.</span>
             </Link>
           </Boop>
         </HiddenMenu>

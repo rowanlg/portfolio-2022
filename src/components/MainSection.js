@@ -35,14 +35,14 @@ const BackgroundImgContainer = styled.div`
 const TextLeft = styled.div`
   grid-area: 3 / 2 / 3 / 4;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
   text-align: center;
-  margin-top: -1rem;
+  margin-top: 0.3rem;
 
   h3 {
-    font-size: 1.2rem;
+    font-size: 1rem;
     overflow: hidden;
     white-space: nowrap;
     @media screen and (min-width: 500px) {
@@ -52,7 +52,7 @@ const TextLeft = styled.div`
     }
   }
   p {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     width: 150%;
     @media screen and (min-width: 500px) {
       font-size: 0.9rem;
@@ -67,6 +67,7 @@ const TextLeft = styled.div`
     margin-top: -4rem;
     text-align: right;
     align-items: flex-end;
+    justify-content: center;
   }
 `
 
@@ -83,7 +84,7 @@ const TextRight = styled.div`
   max-width: 368px;
   h1 {
     font-weight: 800;
-    font-size: 1.7rem;
+    font-size: 1.1rem;
     @media screen and (min-width: 500px) {
       font-size: 2.1rem;
       max-width: 250px;

@@ -19,10 +19,6 @@ const Burger = styled.div`
     border-radius: 1rem;
     transform-origin: 50%;
     transition: 1s linear all;
-    @media screen and (min-width: 500px) {
-      width: 50px;
-      height: 5px;
-    }
   }
   div:nth-child(1) {
     background-color: ${colours.red};
