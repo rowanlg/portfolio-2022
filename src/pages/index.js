@@ -5,6 +5,7 @@ import "../index.css"
 import { colours } from "../utils/colours"
 import MainSection from "../components/MainSection"
 import WorkSection from "../components/WorkSection"
+import ContactSection from "../components/ContactSection"
 
 const Main = styled.main`
   background-color: ${colours.dark};
@@ -18,6 +19,7 @@ export default function Home() {
       <NavSection />
       <MainSection />
       <WorkSection />
+      <ContactSection />
     </Main>
   )
 }
