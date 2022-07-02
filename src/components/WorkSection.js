@@ -31,6 +31,7 @@ const WorkContainer = styled.div`
     margin-top: 4rem;
     h4 {
       font-size: 0.9rem;
+      margin-bottom: 0.3rem;
     }
     p {
       font-size: 0.8rem;

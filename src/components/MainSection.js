@@ -49,6 +49,7 @@ const TextLeft = styled.div`
     font-size: 1rem;
     overflow: hidden;
     white-space: nowrap;
+    margin-bottom: 0.1rem;
     @media screen and (min-width: 500px) {
       font-size: 1.3rem;
       overflow: auto;

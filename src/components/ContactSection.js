@@ -20,6 +20,8 @@ const ContactContainer = styled.div`
     margin: 6rem auto;
     h2 {
       font-size: 1.2rem;
+      margin-bottom: 0.2rem;
+      margin-top: 1rem;
     }
     p {
       font-size: 0.8rem;
