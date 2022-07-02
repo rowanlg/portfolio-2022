@@ -42,7 +42,7 @@ const TextLeft = styled.div`
   text-align: center;
   margin-top: 0.3rem;
   transition: all 1s ease;
-  transform: translate(-70vw, 0);
+  transform: translate(-120vw, 0);
   .hide-on-mobile {
     @media screen and (max-width: 500px) {
       display: none;
@@ -91,7 +91,7 @@ const TextRight = styled.div`
   margin-bottom: -1rem;
   max-width: 368px;
   transition: all 1s ease;
-  transform: translate(70vw, 0);
+  transform: translate(120vw, 0);
   h1 {
     font-weight: 800;
     font-size: 1.1rem;
