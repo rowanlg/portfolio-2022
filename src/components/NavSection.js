@@ -78,7 +78,8 @@ const HiddenMenu = styled.div`
   top: 0;
   height: 300vh;
   width: 200vw;
-  background-color: pink;
+  /* background-color: #5b437a; */
+  background-color: ${colours.light};
   transition: all 1s ease-in-out;
   overflow-x: hidden;
   /* display: flex;
@@ -102,6 +103,7 @@ const HiddenMenu = styled.div`
     margin: 0.5rem;
     a {
       font-size: 1.5rem;
+      color: ${colours.dark};
       @media screen and (min-width: 1000px) {
         font-size: 2rem;
       }

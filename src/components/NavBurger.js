@@ -9,7 +9,7 @@ const Burger = styled.div`
   width: 50px;
   height: 50px;
   position: relative;
-  transform: rotate(25deg);
+  transform: rotate(23deg);
   div {
     position: absolute;
     width: 40px;
@@ -39,11 +39,11 @@ const Burger = styled.div`
 
 const NavBurger = ({ toggled, setToggled }) => {
   const style = useSpring({
-    transform: "rotate(-1873deg)",
+    transform: "rotate(-1871deg)",
     backgroundColor: colours.red,
   })
   const style45 = useSpring({
-    transform: "rotate(-1958deg)",
+    transform: "rotate(-1956deg)",
     backgroundColor: colours.red,
   })
 

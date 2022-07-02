@@ -18,7 +18,7 @@ const Main = styled.main`
 export default function Home() {
   return (
     <Main id="about">
-      <Helmet>
+      <Helmet htmlAttributes={{ lang: "en" }}>
         <meta charSet="utf-8" />
         <title>r0o.dev - Portfolio Site</title>
         <link rel="canonical" href="http://r0o.dev" />
