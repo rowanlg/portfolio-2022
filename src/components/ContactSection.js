@@ -17,7 +17,7 @@ const ContactContainer = styled.div`
     align-items: center;
     flex-direction: column;
     text-align: center;
-    margin: 6rem auto;
+    margin: 6rem auto 5rem auto;
     h2 {
       font-size: 1.2rem;
       margin-bottom: 0.2rem;
@@ -72,6 +72,7 @@ const ContactFormContainer = styled.div`
     h4 {
       margin-left: 6px;
       margin-bottom: 1rem;
+      text-align: center;
     }
     p {
       font-size: 0.8rem;
@@ -81,7 +82,7 @@ const ContactFormContainer = styled.div`
         resize: vertical;
         min-height: 35px;
         @media screen and (min-width: 500px) {
-          min-height: 175px;
+          min-height: 188px;
           resize: none;
         }
       }
@@ -113,6 +114,10 @@ const ContactFormContainer = styled.div`
         background-color: ${colours.dark};
         padding: 0 1rem;
         height: 35px;
+        margin-left: 1rem;
+        @media screen and (min-width: 500px) {
+          margin-left: 0;
+        }
       }
     }
   }

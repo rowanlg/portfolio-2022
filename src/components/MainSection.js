@@ -28,6 +28,7 @@ const BackgroundImgContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all 1s ease-in-out;
   @media screen and (min-width: 500px) {
     grid-area: 2 / 3 / 5 / 11;
     margin-left: -4rem;
@@ -134,7 +135,9 @@ const MainSection = () => {
 
   return (
     <Main>
-      <BackgroundImgContainer>
+      <BackgroundImgContainer
+        style={loaded ? { opacity: "1" } : { opacity: "0" }}
+      >
         {/* <img
           src={MainGraphic}
           alt="Background Logo"
@@ -146,7 +149,13 @@ const MainSection = () => {
           placeholder="tracedSVG"
         />
       </BackgroundImgContainer>
-      <TextLeft style={loaded ? { transform: "translate(0, 0)" } : {}}>
+      <TextLeft
+        style={
+          loaded
+            ? { transform: "translate(0, 0)", opacity: "1" }
+            : { opacity: "0" }
+        }
+      >
         <h3 className="hide-on-mobile">Frontend/Web3 Developer</h3>
         <p>
           I am a self taught developer of just under 3 years, I have experience
@@ -156,7 +165,13 @@ const MainSection = () => {
           this ever changing industry.{" "}
         </p>
       </TextLeft>
-      <TextRight style={loaded ? { transform: "translate(0, 0)" } : {}}>
+      <TextRight
+        style={
+          loaded
+            ? { transform: "translate(0, 0)", opacity: "1" }
+            : { opacity: "0" }
+        }
+      >
         <h1>
           I genuinely love making things
           <span style={{ color: colours.yellow }}>,</span> tech just helps me do

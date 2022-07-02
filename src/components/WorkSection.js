@@ -20,6 +20,19 @@ const WorkContainer = styled.div`
   flex-direction: column;
   padding: 1rem 0 3rem 0;
   color: ${colours.dark};
+  h2 {
+    margin-top: 4rem;
+    font-size: 1.2rem;
+  }
+  .line {
+    width: 70%;
+    height: 2px;
+    border-radius: 5px;
+    /* margin-top: -0.8rem; */
+    margin-bottom: 1rem;
+    background-color: ${colours.dark};
+    /* opacity: 0.5; */
+  }
   @media screen and (min-width: 700px) {
     margin: auto;
     max-width: 900px;
@@ -92,7 +105,9 @@ const WorkSection = () => {
 
   return (
     <WorkContainer id="work">
-      <Work>
+      <h2>Projects</h2>
+      <div className="line" />
+      <Work style={{ marginTop: "1rem" }}>
         <div
           onMouseOver={() => {
             setHover("1")
