@@ -40,7 +40,11 @@ const TextLeft = styled.div`
   flex-direction: column;
   text-align: center;
   margin-top: 0.3rem;
-
+  .hide-on-mobile {
+    @media screen and (max-width: 500px) {
+      display: none;
+    }
+  }
   h3 {
     font-size: 1rem;
     overflow: hidden;
@@ -111,7 +115,7 @@ const MainSection = () => {
         />
       </BackgroundImgContainer>
       <TextLeft>
-        <h3>Frontend/Web3 Developer</h3>
+        <h3 className="hide-on-mobile">Frontend/Web3 Developer</h3>
         <p>
           I am a self taught developer of just under 3 years, I have experience
           in React, Gatsby, HTML, CSS, SASS, CSS-in-JS, Hardhat, Ethers.js,

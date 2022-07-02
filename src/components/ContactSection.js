@@ -7,6 +7,9 @@ const ContactContainer = styled.div`
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
+  @media screen and (min-width: 500px) {
+    padding-bottom: 100px;
+  }
 
   .contact-header {
     display: flex;
@@ -75,6 +78,10 @@ const ContactFormContainer = styled.div`
         height: 105px;
         resize: vertical;
         min-height: 35px;
+        @media screen and (min-width: 500px) {
+          min-height: 175px;
+          resize: none;
+        }
       }
       input {
         height: 35px;
@@ -111,7 +118,7 @@ const ContactFormContainer = styled.div`
 
 const ContactSection = () => {
   return (
-    <ContactContainer>
+    <ContactContainer id="contact">
       <div className="contact-header">
         <h2>Get in Touch!</h2>
         <p>Send a message here, and I’ll get back in touch asap :)</p>

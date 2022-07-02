@@ -14,6 +14,29 @@ const NavContainer = styled.div`
   position: fixed;
   top: 0;
   transition: 0.2s linear all;
+  z-index: 100;
+  .hover-green:hover {
+    color: ${colours.green};
+  }
+  .hover-red {
+    transition: all 1s ease-in;
+  }
+  .hover-red:hover {
+    color: ${colours.red};
+    transition: 0s;
+  }
+  .hover-yellow:hover {
+    color: ${colours.yellow};
+  }
+  .yellow {
+    color: ${colours.yellow};
+  }
+  .red {
+    color: ${colours.red};
+  }
+  .green {
+    color: ${colours.green};
+  }
 `
 
 const Nav = styled.nav`
@@ -23,6 +46,7 @@ const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   a {
     user-select: none;
     cursor: pointer;
@@ -34,7 +58,6 @@ const Nav = styled.nav`
       opacity: 0;
       margin-left: 0;
       transition: all 1s ease-out;
-      color: ${colours.red};
     }
     :hover {
       span.dot {
@@ -51,16 +74,29 @@ const Nav = styled.nav`
 
 const HiddenMenu = styled.div`
   position: fixed;
-  left: 200vw;
+  left: 210vw;
   top: 0;
-  height: 100vh;
-  width: 100vw;
+  height: 300vh;
+  width: 200vw;
   background-color: pink;
-  transition: 1s linear all;
-  display: flex;
+  transition: all 1s ease-in;
+  /* display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  flex-direction: column; */
+  transform: rotate(65deg);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    grid-area: 1 / 1 / 2 / 2;
+  }
   span {
     margin: 0.5rem;
     a {
@@ -90,7 +126,7 @@ const NavSection = () => {
   const [visible, setVisible] = useState(true)
 
   const style = useSpring({
-    transform: "translate(-200vw, 0)",
+    transform: "translate(-210vw, 0)",
   })
 
   const handleScroll = debounce(() => {
@@ -116,42 +152,47 @@ const NavSection = () => {
       <Nav>
         <Boop rotation={10} timing={100}>
           <Link to="/">
-            roo<span style={{ color: colours.yellow }}>_</span>dev
-            <span className="dot">.</span>
+            r0o
+            <span style={{ color: colours.yellow }}>.</span>
+            <span className="hover-red">dev</span>
+            <span className="dot green">/</span>
+            {/* <span className="dot green">dev</span> */}
           </Link>
         </Boop>
 
         <HiddenMenu as={animated.div} style={toggled ? style : {}}>
-          <Boop rotation={10} timing={100}>
-            <Link
-              to="/#about"
-              onClick={() => {
-                setToggled(!toggled)
-              }}
-            >
-              about<span>.</span>
-            </Link>
-          </Boop>
-          <Boop rotation={10} timing={100}>
-            <Link
-              to="/#work"
-              onClick={() => {
-                setToggled(!toggled)
-              }}
-            >
-              work<span>.</span>
-            </Link>
-          </Boop>
-          <Boop rotation={10} timing={100}>
-            <Link
-              to="/#contact"
-              onClick={() => {
-                setToggled(!toggled)
-              }}
-            >
-              contact<span>.</span>
-            </Link>
-          </Boop>
+          <div>
+            <Boop rotation={10} timing={100}>
+              <Link
+                to="/#about"
+                onClick={() => {
+                  setToggled(!toggled)
+                }}
+              >
+                about<span className="yellow">.</span>
+              </Link>
+            </Boop>
+            <Boop rotation={10} timing={100}>
+              <Link
+                to="/#work"
+                onClick={() => {
+                  setToggled(!toggled)
+                }}
+              >
+                work<span className="red">.</span>
+              </Link>
+            </Boop>
+            <Boop rotation={10} timing={100}>
+              <Link
+                to="/#contact"
+                onClick={() => {
+                  setToggled(!toggled)
+                }}
+              >
+                contact<span className="green">.</span>
+              </Link>
+            </Boop>
+          </div>
         </HiddenMenu>
         <NavBurger toggled={toggled} setToggled={setToggled} />
       </Nav>

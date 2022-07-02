@@ -1,7 +1,9 @@
-import React from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
+import { StaticImage } from "gatsby-plugin-image"
 import { colours } from "../utils/colours"
-import Demo1 from "../assets/demo1.png"
+import Demo1A from "../assets/asado-barca-mockup.png"
+import Demo1B from "../assets/asado-barca-mockup2.png"
 import Demo2 from "../assets/demo2.png"
 import Demo3 from "../assets/demo3.png"
 import Demo4 from "../assets/demo4.png"
@@ -84,28 +86,69 @@ const Work = styled.div`
 `
 
 const WorkSection = () => {
+  const [hover, setHover] = useState("")
+
   return (
     <WorkContainer id="work">
       <Work>
-        <img src={Demo1} alt="Demo Project 1" />
+        <div
+          onMouseOver={() => {
+            setHover("1")
+          }}
+          onMouseOut={() => {
+            setHover("")
+          }}
+        >
+          {hover === "1" ? (
+            <StaticImage
+              src="../assets/asado-barca-mockup2.png"
+              alt="Asado Barcelona Demo Image 2"
+              placeholder="blurred"
+              layout="constrained"
+              width={2500}
+            />
+          ) : (
+            <StaticImage
+              src="../assets/asado-barca-mockup.png"
+              alt="Asado Barcelona Demo Image"
+              placeholder="blurred"
+              layout="constrained"
+              width={2500}
+            />
+          )}
+        </div>
         <div>
-          <h3>Lorem Ipsum - React/Gatsby/CSS-in-JS</h3>
+          <h3>
+            Asado Barcelona - Restaurant Site w/ Booking Portal
+            <br />
+            React/Gatsby/Styled Components/Contentful/Netlify
+          </h3>
           <p>
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum."
+            One of my first freelance web design and development jobs. I decided
+            that instead of the client requesting changes to their site via me,
+            I would build them a backend where they could change the copy,
+            images and menu themselves. To do this I used Contentful's CMS with
+            graphQL to query the data inputted into the CMS' backend and show
+            this programatically via a lighting fast Gatsby site, and now the
+            client is happy he doesn't have to pay me for changes haha. I was
+            particularly happy with the lighthouse scores on this site,
+            achieving an almost perfect 100 across the board.
           </p>
-          <a href="https://twitter.com/">
+          <a
+            href="https://asadobarcelona.com/"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
             <FontAwesomeIcon
               icon={faArrowUpRightFromSquare}
               style={{ color: colours.green, fontSize: "1.5rem" }}
             />
           </a>
-          <a href="https://github.com/">
+          <a
+            href="https://github.com/rowanlg/asado-barca-v7"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
             <FontAwesomeIcon
               icon={faGithubSquare}
               style={{ color: colours.dark, fontSize: "1.5rem" }}
@@ -114,9 +157,39 @@ const WorkSection = () => {
         </div>
       </Work>
       <Work>
-        <img src={Demo2} alt="Demo Project 1" className="order-change" />
+        <div
+          onMouseOver={() => {
+            setHover("2")
+          }}
+          onMouseOut={() => {
+            setHover("")
+          }}
+          className="order-change"
+        >
+          {hover === "2" ? (
+            <StaticImage
+              src="../assets/bald-flavours-mockup2.png"
+              alt="Bald Flavours Demo Image 2"
+              placeholder="blurred"
+              layout="constrained"
+              width={2500}
+            />
+          ) : (
+            <StaticImage
+              src="../assets/bald-flavours-mockup.png"
+              alt="Bald Flavours Demo Image"
+              placeholder="blurred"
+              layout="constrained"
+              width={2500}
+            />
+          )}
+        </div>
         <div>
-          <h3>Lorem Ipsum - React/Gatsby/CSS-in-JS</h3>
+          <h3>
+            Bald Flavours - Blog Site
+            <br />
+            React/Gatsby/Sass/Netlify CMS
+          </h3>
           <p>
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -126,13 +199,21 @@ const WorkSection = () => {
             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
             culpa qui officia deserunt mollit anim id est laborum."
           </p>
-          <a href="https://twitter.com/">
+          <a
+            href="https://baldflavours.com/"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
             <FontAwesomeIcon
               icon={faArrowUpRightFromSquare}
               style={{ color: colours.green, fontSize: "1.5rem" }}
             />
           </a>
-          <a href="https://github.com/">
+          <a
+            href="https://github.com/rowanlg/bald-flavours"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
             <FontAwesomeIcon
               icon={faGithubSquare}
               style={{ color: colours.dark, fontSize: "1.5rem" }}
@@ -153,13 +234,21 @@ const WorkSection = () => {
             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
             culpa qui officia deserunt mollit anim id est laborum."
           </p>
-          <a href="https://twitter.com/">
+          <a
+            href="https://asadobarcelona.com/"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
             <FontAwesomeIcon
               icon={faArrowUpRightFromSquare}
               style={{ color: colours.green, fontSize: "1.5rem" }}
             />
           </a>
-          <a href="https://github.com/">
+          <a
+            href="https://github.com/"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
             <FontAwesomeIcon
               icon={faGithubSquare}
               style={{ color: colours.dark, fontSize: "1.5rem" }}
@@ -180,13 +269,21 @@ const WorkSection = () => {
             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
             culpa qui officia deserunt mollit anim id est laborum."
           </p>
-          <a href="https://twitter.com/">
+          <a
+            href="https://asadobarcelona.com/"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
             <FontAwesomeIcon
               icon={faArrowUpRightFromSquare}
               style={{ color: colours.green, fontSize: "1.5rem" }}
             />
           </a>
-          <a href="https://github.com/">
+          <a
+            href="https://github.com/"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
             <FontAwesomeIcon
               icon={faGithubSquare}
               style={{ color: colours.dark, fontSize: "1.5rem" }}
@@ -207,13 +304,21 @@ const WorkSection = () => {
             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
             culpa qui officia deserunt mollit anim id est laborum."
           </p>
-          <a href="https://twitter.com/">
+          <a
+            href="https://asadobarcelona.com/"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
             <FontAwesomeIcon
               icon={faArrowUpRightFromSquare}
               style={{ color: colours.green, fontSize: "1.5rem" }}
             />
           </a>
-          <a href="https://github.com/">
+          <a
+            href="https://github.com/"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
             <FontAwesomeIcon
               icon={faGithubSquare}
               style={{ color: colours.dark, fontSize: "1.5rem" }}
