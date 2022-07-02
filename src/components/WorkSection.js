@@ -64,6 +64,7 @@ const Work = styled.div`
   }
   a {
     margin-right: 0.6rem;
+    font-size: 1.5rem;
   }
   @media screen and (min-width: 700px) {
     flex-direction: row;
