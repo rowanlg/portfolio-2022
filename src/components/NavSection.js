@@ -102,10 +102,10 @@ const HiddenMenu = styled.div`
   span {
     margin: 0.5rem;
     a {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       color: ${colours.dark};
       @media screen and (min-width: 1000px) {
-        font-size: 2rem;
+        font-size: 1.5rem;
       }
       span {
         opacity: 0;

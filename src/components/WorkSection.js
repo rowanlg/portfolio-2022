@@ -18,7 +18,7 @@ const WorkContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 4rem 0;
+  padding: 1rem 0 3rem 0;
   color: ${colours.dark};
   @media screen and (min-width: 700px) {
     margin: auto;

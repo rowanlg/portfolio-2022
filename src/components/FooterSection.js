@@ -10,6 +10,7 @@ const Footer = styled.footer`
   justify-content: center;
   align-items: flex-end;
   padding-bottom: 10px;
+  font-size: 0.8rem;
 `
 
 const FooterSection = () => {
