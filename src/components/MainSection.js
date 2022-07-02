@@ -144,9 +144,10 @@ const MainSection = () => {
           style={{ overflow: "hidden" }}
         /> */}
         <StaticImage
-          src="../assets/main-graphic.png"
+          src="../assets/main-graphic5.png"
           alt="Backround Logo"
           placeholder="tracedSVG"
+          width={800}
         />
       </BackgroundImgContainer>
       <TextLeft
