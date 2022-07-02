@@ -126,7 +126,7 @@ const ContactSection = () => {
         <p>Send a message here, and I’ll get back in touch asap :)</p>
       </div>
       <ContactFormContainer>
-        <form name="contact" method="post" netlify>
+        <form name="contact" method="POST" data-netlify="true">
           <h4>Contact Form</h4>
           <input type="hidden" name="form-name" value="contact" />
           <div className="container">
@@ -172,7 +172,9 @@ const ContactSection = () => {
               ></textarea>
             </p>
             <p className="center">
-              <input className="submit" type="submit" value="Send message" />
+              <button className="submit" type="submit">
+                Send message
+              </button>
             </p>
           </div>
         </form>
