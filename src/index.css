@@ -7,4 +7,5 @@
 }
 body {
   background-color: #251426;
+  overflow-x: hidden;
 }

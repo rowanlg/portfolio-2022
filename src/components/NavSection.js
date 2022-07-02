@@ -80,6 +80,7 @@ const HiddenMenu = styled.div`
   width: 200vw;
   background-color: pink;
   transition: all 1s ease-in;
+  overflow-x: hidden;
   /* display: flex;
   justify-content: center;
   align-items: center;
