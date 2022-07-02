@@ -1,7 +1,8 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import MainGraphic from "../assets/main-graphic.png"
 import { colours } from "../utils/colours"
+import { StaticImage } from "gatsby-plugin-image"
 
 const Main = styled.div`
   width: 100vw;
@@ -40,6 +41,8 @@ const TextLeft = styled.div`
   flex-direction: column;
   text-align: center;
   margin-top: 0.3rem;
+  transition: all 1s ease;
+  transform: translate(-70vw, 0);
   .hide-on-mobile {
     @media screen and (max-width: 500px) {
       display: none;
@@ -85,8 +88,10 @@ const TextRight = styled.div`
   flex-direction: column;
   width: 80%;
   margin: auto;
-  margin-bottom: -0.1rem;
+  margin-bottom: -1rem;
   max-width: 368px;
+  transition: all 1s ease;
+  transform: translate(70vw, 0);
   h1 {
     font-weight: 800;
     font-size: 1.1rem;
@@ -106,16 +111,26 @@ const TextRight = styled.div`
 `
 
 const MainSection = () => {
+  const [loaded, setLoaded] = useState(false)
+  useEffect(() => {
+    setLoaded(true)
+  }, [])
+
   return (
     <Main>
       <BackgroundImgContainer>
-        <img
+        {/* <img
           src={MainGraphic}
           alt="Background Logo"
           style={{ overflow: "hidden" }}
+        /> */}
+        <StaticImage
+          src="../assets/main-graphic.png"
+          alt="Backround Logo"
+          placeholder="tracedSVG"
         />
       </BackgroundImgContainer>
-      <TextLeft>
+      <TextLeft style={loaded ? { transform: "translate(0, 0)" } : {}}>
         <h3 className="hide-on-mobile">Frontend/Web3 Developer</h3>
         <p>
           I am a self taught developer of just under 3 years, I have experience
@@ -125,7 +140,7 @@ const MainSection = () => {
           this ever changing industry.{" "}
         </p>
       </TextLeft>
-      <TextRight>
+      <TextRight style={loaded ? { transform: "translate(0, 0)" } : {}}>
         <h1>
           I genuinely love making things
           <span style={{ color: colours.yellow }}>,</span> tech just helps me do
