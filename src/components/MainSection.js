@@ -12,6 +12,7 @@ const Main = styled.div`
   grid-template-rows: repeat(4, 1fr);
   grid-column-gap: 0px;
   grid-row-gap: 0px;
+  user-select: none;
   @media screen and (min-width: 500px) {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -41,7 +42,8 @@ const TextLeft = styled.div`
   flex-direction: column;
   text-align: center;
   margin-top: 0.3rem;
-  transition: all 1s ease;
+  transition: all 1s ease-in-out;
+  /* transition: all 1s cubic-bezier(0.5, 1.8, 0.3, 0.8); */
   transform: translate(-120vw, 0);
   .hide-on-mobile {
     @media screen and (max-width: 500px) {
@@ -90,8 +92,11 @@ const TextRight = styled.div`
   margin: auto;
   margin-bottom: -1rem;
   max-width: 368px;
-  transition: all 1s ease;
+  transition: all 1s ease-in-out;
+
+  /* transition: all 1s cubic-bezier(0.3, 1.8, 0.44, 0.49); */
   transform: translate(120vw, 0);
+  transition-delay: 300ms;
   h1 {
     font-weight: 800;
     font-size: 1.1rem;

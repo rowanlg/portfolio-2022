@@ -5,11 +5,19 @@
  */
 
 module.exports = {
-  /* Your site config here */
+  siteMetadata: {
+    title: "r0o.dev - Portfolio Site",
+    titleTemplate: "%s · The Real Hero",
+    description: "Portfolio site showing the work of r0o_dev",
+    url: "https://www.r0o.dev", // No trailing slash allowed!
+    image: "/site-image.jpg", // Path to the image placed in the 'static' folder, in the project's root directory.
+    twitterUsername: "@r0o_dev",
+  },
   plugins: [
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
+    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-styled-components`,
       options: {

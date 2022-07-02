@@ -1,6 +1,7 @@
 import React from "react"
 import NavSection from "../components/NavSection"
 import styled from "styled-components"
+import { Helmet } from "react-helmet"
 import "../index.css"
 import { colours } from "../utils/colours"
 import MainSection from "../components/MainSection"
@@ -17,6 +18,11 @@ const Main = styled.main`
 export default function Home() {
   return (
     <Main id="about">
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>r0o.dev - Portfolio Site</title>
+        <link rel="canonical" href="http://r0o.dev" />
+      </Helmet>
       <NavSection />
       <MainSection />
       <WorkSection />

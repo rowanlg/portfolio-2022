@@ -153,7 +153,7 @@ const ContactSection = () => {
                 />
               </p>
               <p>
-                <label htmlFor="email">Number</label> <br />
+                <label htmlFor="number">Number</label> <br />
                 <input
                   className="filled input"
                   type="number"
