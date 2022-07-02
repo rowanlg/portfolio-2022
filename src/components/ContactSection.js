@@ -110,7 +110,7 @@ const ContactFormContainer = styled.div`
         border-radius: 5px;
         border: none;
         color: ${colours.light};
-        background-color: ${colours.red};
+        background-color: ${colours.dark};
         padding: 0 1rem;
         height: 35px;
       }

@@ -56,19 +56,26 @@ const TextLeft = styled.div`
     white-space: nowrap;
     margin-bottom: 0.1rem;
     @media screen and (min-width: 500px) {
-      font-size: 1.3rem;
+      font-size: 1rem;
       overflow: auto;
       white-space: normal;
+    }
+    @media screen and (min-width: 850px) {
+      font-size: 1.3rem;
     }
   }
   p {
     font-size: 0.7rem;
     width: 150%;
     @media screen and (min-width: 500px) {
-      font-size: 0.9rem;
+      font-size: 0.8rem;
       width: auto;
       margin-left: 1rem;
       max-width: 250px;
+    }
+    @media screen and (min-width: 850px) {
+      font-size: 0.9rem;
+      max-width: 280px;
     }
   }
   @media screen and (min-width: 500px) {
@@ -101,8 +108,12 @@ const TextRight = styled.div`
     font-weight: 800;
     font-size: 1.1rem;
     @media screen and (min-width: 500px) {
-      font-size: 2.1rem;
-      max-width: 250px;
+      font-size: 1.8rem;
+      max-width: 270px;
+    }
+    @media screen and (min-width: 850px) {
+      font-size: 2.2rem;
+      max-width: 290px;
     }
   }
   @media screen and (min-width: 500px) {
