@@ -30,7 +30,7 @@ const WorkContainer = styled.div`
     text-align: center;
     margin-top: 4rem;
     h4 {
-      font-size: 0.9rem;
+      font-size: 0.8rem;
       margin-bottom: 0.3rem;
     }
     p {
@@ -55,11 +55,11 @@ const Work = styled.div`
     box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.2); */
   }
   h3 {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     margin-bottom: 0.5rem;
   }
   p {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     margin-bottom: 1rem;
   }
   a {
