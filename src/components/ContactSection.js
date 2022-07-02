@@ -126,7 +126,7 @@ const ContactSection = () => {
         <p>Send a message here, and I’ll get back in touch asap :)</p>
       </div>
       <ContactFormContainer>
-        <form name="contact" method="post">
+        <form name="contact" method="post" netlify>
           <h4>Contact Form</h4>
           <input type="hidden" name="form-name" value="contact" />
           <div className="container">
