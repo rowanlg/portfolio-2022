@@ -81,15 +81,14 @@ const HiddenMenu = styled.div`
   top: 0;
   height: 300vh;
   width: 200vw;
-  /* background-color: #5b437a; */
   background-color: ${colours.light};
+  -webkit-transition: all 1.5s ease-in-out;
+  -o-transition: all 1.5s ease-in-out;
   transition: all 1.5s ease-in-out;
-  overflow-x: hidden;
-  /* display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column; */
+  -webkit-transform: rotate(65deg);
+  -ms-transform: rotate(65deg);
   transform: rotate(65deg);
+  overflow-x: hidden;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(3, 1fr);
