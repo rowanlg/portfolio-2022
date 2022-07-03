@@ -1,8 +1,9 @@
 import React from "react"
 
-const Icons = ({ loaded }) => {
+const Icons = ({ timer }) => {
   return (
-    <div className="icons" style={loaded ? { opacity: "1" } : { opacity: "0" }}>
+    <div className="icons" style={timer ? { opacity: "1" } : { opacity: "0" }}>
+      {/* <div> */}
       <svg
         width="25"
         height="22"
@@ -135,6 +136,7 @@ const Icons = ({ loaded }) => {
           fill="#FAFAFA"
         />
       </svg>
+      {/* </div> */}
     </div>
   )
 }
