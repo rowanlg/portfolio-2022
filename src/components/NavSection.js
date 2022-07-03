@@ -55,7 +55,7 @@ const Nav = styled.nav`
     font-weight: 800;
     font-size: 1.2rem;
     @media screen and (min-width: 850px) {
-      font-size: 1.5rem;
+      font-size: 1.3rem;
     }
     span.dot {
       opacity: 0;
