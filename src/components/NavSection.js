@@ -83,7 +83,7 @@ const HiddenMenu = styled.div`
   width: 200vw;
   /* background-color: #5b437a; */
   background-color: ${colours.light};
-  transition: all 1s ease-in-out;
+  transition: all 1.5s ease-in-out;
   overflow-x: hidden;
   /* display: flex;
   justify-content: center;
