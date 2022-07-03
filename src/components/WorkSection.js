@@ -98,6 +98,12 @@ const Work = styled.div`
       order: 2;
     }
   }
+  .stack {
+    opacity: 0.7;
+    font-size: 0.7rem;
+    margin-top: -0.5rem;
+    margin-bottom: 0.5rem;
+  }
 `
 
 const WorkSection = () => {
@@ -135,11 +141,7 @@ const WorkSection = () => {
           )}
         </div>
         <div>
-          <h3>
-            Asado Barcelona - Restaurant Site w/ Booking Portal
-            <br />
-            React/Gatsby/Styled Components/Contentful/Netlify
-          </h3>
+          <h3>Asado Barcelona - Restaurant Site w/ Booking Portal</h3>
           <p>
             One of my first freelance web design and development jobs. I decided
             that instead of the client requesting changes to their site via me,
@@ -150,6 +152,9 @@ const WorkSection = () => {
             client is happy he doesn't have to pay me for changes haha. I was
             particularly happy with the lighthouse scores on this site,
             achieving an almost perfect 100 across the board.
+          </p>
+          <p className="stack">
+            <b>Stack:</b> React/Gatsby/CSS-in-JS/Contentful/Netlify
           </p>
           <a
             href="https://asadobarcelona.com/"
@@ -202,11 +207,7 @@ const WorkSection = () => {
           )}
         </div>
         <div>
-          <h3>
-            Bald Flavours - Blog Site
-            <br />
-            React/Gatsby/Sass/Netlify CMS
-          </h3>
+          <h3>Bald Flavours - Blog Site</h3>
           <p>
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -215,6 +216,9 @@ const WorkSection = () => {
             reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
             culpa qui officia deserunt mollit anim id est laborum."
+          </p>
+          <p className="stack">
+            <b>Stack:</b> React/Gatsby/Sass/Netlify CMS
           </p>
           <a
             href="https://baldflavours.com/"
@@ -241,7 +245,7 @@ const WorkSection = () => {
       <Work>
         <img src={Demo3} alt="Demo Project 1" />
         <div>
-          <h3>Lorem Ipsum - React/Gatsby/CSS-in-JS</h3>
+          <h3>Lorem Ipsum</h3>
           <p>
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -250,6 +254,9 @@ const WorkSection = () => {
             reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
             culpa qui officia deserunt mollit anim id est laborum."
+          </p>
+          <p className="stack">
+            <b>Stack:</b> React/Gatsby/Sass/Netlify CMS
           </p>
           <a
             href="https://asadobarcelona.com/"
@@ -276,7 +283,7 @@ const WorkSection = () => {
       <Work>
         <img src={Demo4} alt="Demo Project 1" className="order-change" />
         <div>
-          <h3>Lorem Ipsum - React/Gatsby/CSS-in-JS</h3>
+          <h3>Lorem Ipsum</h3>
           <p>
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -285,6 +292,9 @@ const WorkSection = () => {
             reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
             culpa qui officia deserunt mollit anim id est laborum."
+          </p>
+          <p className="stack">
+            <b>Stack:</b> React/Gatsby/Sass/Netlify CMS
           </p>
           <a
             href="https://asadobarcelona.com/"
@@ -311,7 +321,7 @@ const WorkSection = () => {
       <Work>
         <img src={Demo5} alt="Demo Project 1" />
         <div>
-          <h3>Lorem Ipsum - React/Gatsby/CSS-in-JS</h3>
+          <h3>Lorem Ipsum</h3>
           <p>
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -320,6 +330,9 @@ const WorkSection = () => {
             reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
             culpa qui officia deserunt mollit anim id est laborum."
+          </p>
+          <p className="stack">
+            <b>Stack:</b> React/Gatsby/Sass/Netlify CMS
           </p>
           <a
             href="https://asadobarcelona.com/"
