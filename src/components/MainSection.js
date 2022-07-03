@@ -3,6 +3,7 @@ import styled from "styled-components"
 import MainGraphic from "../assets/main-graphic.png"
 import { colours } from "../utils/colours"
 import { StaticImage } from "gatsby-plugin-image"
+import Icons from "./Icons"
 
 const Main = styled.div`
   width: 100vw;
@@ -19,6 +20,22 @@ const Main = styled.div`
     grid-template-rows: repeat(5, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
+  }
+  .icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 1rem;
+    grid-area: 5 / 2 / 6 / 12;
+    margin-bottom: -8rem;
+    transition: opacity 2s linear;
+    transition-delay: 700ms;
+    svg {
+      margin: 0.4rem;
+      height: auto;
+      width: 40px;
+      opacity: 0.5;
+    }
   }
 `
 
@@ -68,6 +85,7 @@ const TextLeft = styled.div`
   p {
     font-size: 0.7rem;
     width: 150%;
+    font-weight: 400;
     @media screen and (min-width: 500px) {
       font-size: 0.8rem;
       width: auto;
@@ -159,11 +177,10 @@ const MainSection = () => {
       >
         <h3 className="hide-on-mobile">Frontend/Web3 Developer</h3>
         <p>
-          I am a self taught developer of just under 3 years, I have experience
-          in React, Gatsby, HTML, CSS, SASS, CSS-in-JS, Hardhat, Ethers.js,
-          Firebase, GraphQL, Python and many more. I pride myself on being able
-          to teach myself anything, and I feel this gives me a huge advantage in
-          this ever changing industry.{" "}
+          I help design and build cool things for businesses, quickly and to the
+          highest standard. Unlike other tech focussed individuals, I am able to
+          connect with my clients, and pride myself on bringing new perspectives
+          to your problems.
         </p>
       </TextLeft>
       <TextRight
@@ -179,6 +196,7 @@ const MainSection = () => {
           it<span style={{ color: colours.red }}>.</span>
         </h1>
       </TextRight>
+      <Icons loaded={loaded} />
     </Main>
   )
 }
