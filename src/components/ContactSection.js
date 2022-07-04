@@ -23,6 +23,11 @@ const ContactContainer = styled.section`
     flex-direction: column;
     text-align: center;
     margin: auto;
+    /* border: 2px solid rgba(232, 95, 92, 0.6); */
+    border-radius: 5px;
+    background-color: rgb(22, 12, 23, 1);
+    height: 515px;
+    width: 500px;
     h2 {
       font-size: 1.2rem;
       margin-bottom: 0.2rem;

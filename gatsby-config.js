@@ -15,7 +15,12 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-image`,
-    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        cropFocus: "north",
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-react-helmet`,
     {

@@ -14,8 +14,8 @@ const Main = styled.main`
   background: rgb(37, 20, 38);
   background: linear-gradient(
     180deg,
-    rgba(37, 20, 38, 1) 0%,
-    rgba(37, 20, 38, 1) 20%,
+    rgba(22, 12, 23, 1) 0%,
+    rgba(22, 12, 23, 1) 20%,
     rgba(65, 157, 120, 1) 500%
   );
   color: ${colours.light};
@@ -47,8 +47,8 @@ export default function Home() {
       <MainSection />
       {/* <WorkSection /> */}
       <WorkSection2 />
-      <ContactSection />
-      <FooterSection />
+      {/* <ContactSection /> */}
+      {/* <FooterSection /> */}
     </Main>
   )
 }

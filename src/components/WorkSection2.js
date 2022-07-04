@@ -10,242 +10,209 @@ import "../svg-background.css"
 import Div100vh from "react-div-100vh"
 
 const WorkContainer = styled.section`
-  /* display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column; */
   transition: all 1s linear;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
   max-height: 500vh !important;
   overflow-y: auto;
-  /* border: 1px solid red;
-  width: 100vw;
-  min-height: 100vh; */
 
   img {
     cursor: pointer;
     border-radius: 5px;
   }
-
-  .work-section-1 {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    gap: 0px 0px;
-    border: 2px solid ${colours.red};
-    max-height: 1000px;
-    margin: auto;
-    max-width: 1200px;
-    border-radius: 5px;
-    .left-image {
-      grid-area: 1 / 1 / 5 / 5;
-      border: 2px solid ${colours.red};
-      margin: 1rem;
-      z-index: 1;
-      border-radius: 5px;
-    }
-    .right-title {
-      grid-area: 1 / 4 / 2 / 7;
-      /* border: 2px solid ${colours.red};
-      border-radius: 5px; */
-      z-index: 2;
-      text-align: right;
-      margin-top: 1rem;
-      margin-right: 1rem;
-      .link-svg {
-        font-size: 1.7rem;
-      }
-      svg {
-        opacity: 0.8;
-        margin: 0 0 0.8rem 0.8rem;
-        font-size: 1.6rem;
-        color: ${colours.light};
-        :hover {
-          opacity: 1;
-        }
-      }
-      .svg-container {
-      }
-      .featured {
-        color: ${colours.yellow};
-        font-family: "Fira Code", monospace;
-        font-weight: 600;
-        font-size: 0.8rem;
-      }
-    }
-    .right-text-box {
-      /* border: 2px solid red; */
-      grid-area: 2 / 4 / 4 / 7;
-      z-index: 2;
-      text-align: right;
-      font-size: 0.9rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-right: 1rem;
-      font-weight: 200;
-      div {
-        border: 2px solid ${colours.red};
-        background-color: rgb(22, 12, 23, 0.8);
-        padding: 1.4rem 1.4rem 0.5rem 1.4rem;
-        border-radius: 5px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-    }
-    .right-text-stack {
-      /* border: 2px solid ${colours.red};
-      border-radius: 5px; */
-      grid-area: 4 / 4 / 5 / 7;
-      z-index: 2;
-      text-align: right;
-      font-family: "Fira Code", monospace;
-      font-weight: 300;
-      font-size: 0.8rem;
-      margin-bottom: 1rem;
-      margin-right: 1rem;
-      padding-top: 0.5rem;
-    }
+  .border-red {
+    /* border: 2px solid rgba(232, 95, 92, 0.6); */
   }
-
-  .work-section-2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    gap: 0px 0px;
-    border: 2px solid ${colours.green};
-    max-height: 1000px;
-    margin: auto;
-    max-width: 1200px;
-    border-radius: 5px;
-    .right-image {
-      grid-area: 1 / 3 / 5 / 7;
-      border: 2px solid ${colours.green};
-      background-color: ${colours.green};
-      margin: 1rem;
-      z-index: 1;
-      border-radius: 5px;
-    }
-    .left-title {
-      grid-area: 1 / 1 / 2 / 4;
-      /* border: 2px solid red; */
-      z-index: 2;
-      text-align: left;
-      margin-top: 1rem;
-      margin-left: 1rem;
-      .link-svg {
-        font-size: 1.7rem;
-      }
-      svg {
-        opacity: 0.8;
-        margin: 0 0.8rem 0.8rem 0;
-        font-size: 1.6rem;
-        color: ${colours.light};
-        :hover {
-          opacity: 1;
-        }
-      }
-      .featured {
-        color: ${colours.yellow};
-        font-family: "Fira Code", monospace;
-        font-weight: 600;
-        font-size: 0.8rem;
-      }
-    }
-    .left-text-box {
-      /* border: 2px solid red; */
-      grid-area: 2 / 1 / 4 / 4;
-      z-index: 2;
-      text-align: left;
-      font-size: 0.9rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-left: 1rem;
-      font-weight: 200;
-      div {
-        border: 2px solid ${colours.green};
-        background-color: rgb(22, 12, 23, 0.8);
-        padding: 1.4rem 1.4rem 0.5rem 1.4rem;
-        border-radius: 5px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-    }
-    .left-text-stack {
-      /* border: 2px solid red; */
-      grid-area: 4 / 1 / 5 / 4;
-      z-index: 2;
-      text-align: left;
-      font-family: "Fira Code", monospace;
-      font-weight: 300;
-      font-size: 0.8rem;
-      margin-bottom: 1rem;
-      margin-left: 1rem;
-      padding-top: 0.5rem;
-    }
+  .border-green {
+    /* border: 2px solid rgba(65, 157, 120, 0.6); */
   }
-
-  .work-section-3 {
-    display: grid;
+  .border-yellow {
+    /* border: 2px solid rgba(247, 179, 43, 0.6); */
+  }
+  .work-section {
+    /* display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    gap: 0px 0px;
-    border: 2px solid ${colours.yellow};
-    max-height: 1000px;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 0px 0px; */
+    padding: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     margin: auto;
-    max-width: 1200px;
+    max-width: 90vw;
     border-radius: 5px;
-    .left-image {
-      grid-area: 1 / 1 / 5 / 5;
-      border: 2px solid ${colours.yellow};
-      margin: 1rem;
+    max-height: 100vh;
+    /* padding-top: 200px; */
+    @media screen and (min-width: 700px) {
+      /* max-height: 80vh; */
+    }
+    @media screen and (min-width: 1040px) {
+      display: grid;
+      gap: 0px 0px;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr;
+      max-height: 1000px;
+      max-width: 1200px;
+    }
+    .image {
+      order: 4;
       z-index: 1;
       border-radius: 5px;
-    }
-    .right-title {
-      grid-area: 1 / 4 / 2 / 7;
-      /* border: 2px solid ${colours.red};
-      border-radius: 5px; */
-      z-index: 2;
-      text-align: right;
-      margin-top: 1rem;
-      margin-right: 1rem;
-      .link-svg {
-        font-size: 1.7rem;
+      max-width: 500px;
+      @media screen and (min-width: 700px) {
+        margin: 1rem;
+        max-width: none;
       }
-      svg {
-        opacity: 0.8;
-        margin: 0 0 0.8rem 0.8rem;
-        font-size: 1.6rem;
-        color: ${colours.light};
-        :hover {
-          opacity: 1;
+    }
+    .image-left {
+      /* grid-area: 5 / 1 / 8 / 7; */
+      @media screen and (min-width: 1040px) {
+        grid-area: 1 / 1 / 5 / 5;
+      }
+    }
+    .image-right {
+      /* grid-area: 5 / 1 / 8 / 7; */
+      @media screen and (min-width: 1040px) {
+        grid-area: 1 / 3 / 5 / 7;
+      }
+    }
+    .text-area-left {
+      /* grid-area: 1 / 1 / 5 / 7; */
+      align-items: center;
+      @media screen and (min-width: 1040px) {
+        grid-area: 1 / 1 / 5 / 4;
+        align-items: flex-start;
+      }
+    }
+    .text-area-right {
+      /* grid-area: 1 / 1 / 5 / 7; */
+      align-items: center;
+      @media screen and (min-width: 1040px) {
+        grid-area: 1 / 4 / 5 / 7;
+        align-items: flex-end;
+      }
+    }
+    .text-area {
+      display: flex;
+      justify-content: flex-end;
+      flex-direction: column;
+      @media screen and (min-width: 500px) {
+        margin-bottom: 0;
+      }
+      @media screen and (min-width: 1040px) {
+        justify-content: center;
+      }
+      div:first-child {
+        @media screen and (min-width: 1040px) {
+          flex-grow: 1;
+          flex-basis: 0;
         }
       }
-      .featured {
-        color: ${colours.yellow};
-        font-family: "Fira Code", monospace;
-        font-weight: 600;
-        font-size: 0.8rem;
+      div:last-child {
+        @media screen and (min-width: 1040px) {
+          flex-grow: 1;
+          flex-basis: 0;
+        }
+      }
+      .title-right {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        @media screen and (min-width: 1040px) {
+          justify-content: flex-end;
+          align-items: flex-end;
+          text-align: right;
+          margin-right: 1rem;
+        }
+      }
+      .title-left {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        @media screen and (min-width: 1040px) {
+          justify-content: flex-end;
+          align-items: flex-start;
+          text-align: left;
+          margin-left: 1rem;
+        }
+      }
+
+      .title-area {
+        z-index: 2;
+        margin-top: 1rem;
+        h3 {
+          font-size: 1rem;
+        }
+        @media screen and (min-width: 500px) {
+          h3 {
+            font-size: 1.3rem;
+          }
+        }
+        .svg-container {
+          display: flex;
+          justify-content: flex-start;
+          align-items: flex-end;
+          flex-direction: row;
+        }
+
+        .link-svg {
+          font-size: 1.7rem;
+        }
+        .svg-right {
+          margin: 0.4rem;
+          @media screen and (min-width: 1040px) {
+            margin: 0 0 0.8rem 0.8rem;
+          }
+        }
+        .svg-left {
+          margin: 0.4rem;
+          @media screen and (min-width: 1040px) {
+            margin: 0 0.8rem 0.8rem 0;
+          }
+        }
+        svg {
+          opacity: 0.8;
+          font-size: 1.6rem;
+          color: ${colours.light};
+          :hover {
+            opacity: 1;
+          }
+        }
+
+        .featured {
+          color: ${colours.yellow};
+          font-family: "Fira Code", monospace;
+          font-weight: 600;
+          font-size: 0.6rem;
+          @media screen and (min-width: 500px) {
+            font-size: 0.8rem;
+          }
+        }
       }
     }
-    .right-text-box {
-      /* border: 2px solid red; */
-      grid-area: 2 / 4 / 4 / 7;
+    .text-box {
       z-index: 2;
-      text-align: right;
-      font-size: 0.9rem;
+      font-size: 0.7rem;
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-right: 1rem;
       font-weight: 200;
+      border-radius: 5px;
+      max-width: 500px;
+
+      @media screen and (max-width: 500px) {
+        display: none;
+      }
+      @media screen and (min-width: 500px) {
+        font-size: 0.9rem;
+      }
+      @media screen and (min-width: 1040px) {
+        max-width: auto;
+      }
       div {
-        border: 2px solid ${colours.yellow};
         background-color: rgb(22, 12, 23, 0.8);
         padding: 1.4rem 1.4rem 0.5rem 1.4rem;
         border-radius: 5px;
@@ -254,18 +221,43 @@ const WorkContainer = styled.section`
         align-items: center;
       }
     }
-    .right-text-stack {
-      /* border: 2px solid ${colours.red};
-      border-radius: 5px; */
-      grid-area: 4 / 4 / 5 / 7;
+    .text-box-right {
+      @media screen and (min-width: 1040px) {
+        margin-right: 1rem;
+        text-align: right;
+      }
+    }
+    .text-box-left {
+      @media screen and (min-width: 1040px) {
+        text-align: left;
+        margin-left: 1rem;
+      }
+    }
+    .text-stack {
       z-index: 2;
-      text-align: right;
       font-family: "Fira Code", monospace;
       font-weight: 300;
-      font-size: 0.8rem;
+      font-size: 0.6rem;
       margin-bottom: 1rem;
-      margin-right: 1rem;
-      padding-top: 0.5rem;
+      margin-top: 1rem;
+      order: 3;
+      @media screen and (min-width: 500px) {
+        font-size: 0.8rem;
+      }
+    }
+    .text-stack-right {
+      text-align: center;
+      @media screen and (min-width: 1040px) {
+        text-align: right;
+        margin-right: 1rem;
+      }
+    }
+    .text-stack-left {
+      text-align: center;
+      @media screen and (min-width: 1040px) {
+        text-align: left;
+        margin-left: 1rem;
+      }
     }
   }
 `
@@ -351,57 +343,63 @@ const WorkSection2 = () => {
         }}
         className="background-1"
       >
-        <div className="work-section-1">
+        <div className="work-section">
           <StaticImage
             src="../assets/1-asado.png"
             alt="Asado Barcelona Demo Image"
             placeholder="blurred"
             layout="constrained"
-            width={800}
-            className="left-image"
+            className="image image-left"
+            // objectFit="contain"
+            // transformOptions={{ cropFocus: "entropy" }}
           />
-          <div className="right-title">
-            <div className="svg-container">
-              <a
-                href="https://github.com/rowanlg/asado-barca-v7"
-                target="_blank"
-                rel="noreferrer noopener"
-              >
-                <FontAwesomeIcon icon={faGithubSquare} />
-              </a>
-              <a
-                href="https://asadobarcelona.com/"
-                target="_blank"
-                rel="noreferrer noopener"
-              >
-                <FontAwesomeIcon
-                  icon={faArrowUpRightFromSquare}
-                  className="link-svg"
-                />
-              </a>
+          <div className="text-area text-area-right">
+            <div className="title-area title-right">
+              <div className="svg-container">
+                <a
+                  href="https://github.com/rowanlg/asado-barca-v7"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  <FontAwesomeIcon
+                    icon={faGithubSquare}
+                    className="link-svg svg-right"
+                  />
+                </a>
+                <a
+                  href="https://asadobarcelona.com/"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  <FontAwesomeIcon
+                    icon={faArrowUpRightFromSquare}
+                    className="link-svg svg-right"
+                  />
+                </a>
+              </div>
+              <p className="featured">Featured Project</p>
+              <h3>Asado Barcelona</h3>
             </div>
-            <p className="featured">Featured Project</p>
-            <h3 className="title">Asado Barcelona</h3>
-          </div>
 
-          <div className="right-text-box">
-            <div>
-              <p>
-                One of my first freelance web design and development jobs. I
-                decided that instead of the client requesting changes to their
-                site via me, I would build them a backend where they could
-                change the copy, images and menu themselves. To do this I used
-                Contentful's CMS with graphQL to query the data inputted into
-                the CMS' backend and show this programatically via a lighting
-                fast Gatsby site, and now the client is happy he doesn't have to
-                pay me for changes haha. I was particularly happy with the
-                lighthouse scores on this site, achieving an almost perfect 100
-                across the board.
-              </p>
+            <div className="text-box text-box-right mobile-hide">
+              <div className="border-red">
+                <p>
+                  One of my first freelance web design and development jobs. I
+                  decided that instead of the client requesting changes to their
+                  site via me, I would build them a backend where they could
+                  change the copy, images and menu themselves. To do this I used
+                  Contentful's CMS with graphQL to query the data inputted into
+                  the CMS' backend and show this programatically via a lighting
+                  fast Gatsby site, and now the client is happy he doesn't have
+                  to pay me for changes haha. I was particularly happy with the
+                  lighthouse scores on this site, achieving an almost perfect
+                  100 across the board.
+                </p>
+              </div>
             </div>
-          </div>
-          <div className="right-text-stack">
-            React Gatsby CSS-in-JS Contentful GraphQL
+            <div className="text-stack text-stack-right">
+              React Gatsby CSS-in-JS Contentful GraphQL
+            </div>
           </div>
         </div>
       </Work>
@@ -413,54 +411,56 @@ const WorkSection2 = () => {
         }}
         className="background-2"
       >
-        <div className="work-section-2">
+        <div className="work-section">
           <StaticImage
             src="../assets/2-bf.png"
-            alt="Asado Barcelona Demo Image"
+            alt="Bald Flavours Demo Image"
             placeholder="blurred"
             layout="constrained"
             width={800}
-            className="right-image"
+            className="image image-right"
           />
-          <div className="left-title">
-            <div>
-              <a
-                href="https://github.com/rowanlg/asado-barca-v7"
-                target="_blank"
-                rel="noreferrer noopener"
-              >
-                <FontAwesomeIcon icon={faGithubSquare} />
-              </a>
-              <a
-                href="https://asadobarcelona.com/"
-                target="_blank"
-                rel="noreferrer noopener"
-              >
-                <FontAwesomeIcon
-                  icon={faArrowUpRightFromSquare}
-                  className="link-svg"
-                />
-              </a>
+          <div className="text-area text-area-left">
+            <div className="title-area title-left">
+              <div className="svg-container">
+                <a
+                  href="https://github.com/rowanlg/asado-barca-v7"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  <FontAwesomeIcon icon={faGithubSquare} className="svg-left" />
+                </a>
+                <a
+                  href="https://asadobarcelona.com/"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  <FontAwesomeIcon
+                    icon={faArrowUpRightFromSquare}
+                    className="link-svg svg-left"
+                  />
+                </a>
+              </div>
+              <p className="featured">Featured Project</p>
+              <h3>Bald Flavours</h3>
             </div>
-            <p className="featured">Featured Project</p>
-            <h3>Asado Barcelona</h3>
-          </div>
 
-          <div className="left-text-box">
-            <div>
-              <p>
-                A full blog site, with backend via Netlify, for a food writer
-                from Bristol. The site allows them to publish reviews and
-                recipes, which are inputted into the backend on Netlify, these
-                are then categorized on the site and published. Apart from a
-                clean design the client requested a light/dark mode. Which I
-                implemented, this was the first blog style site I had designed,
-                but I believe it stands up to industry standards.
-              </p>
+            <div className="text-box text-box-left mobile-hide">
+              <div className="border-green">
+                <p>
+                  A full blog site, with backend via Netlify, for a food writer
+                  from Bristol. The site allows them to publish reviews and
+                  recipes, which are inputted into the backend on Netlify, these
+                  are then categorized on the site and published. Apart from a
+                  clean design the client requested a light/dark mode. Which I
+                  implemented, this was the first blog style site I had
+                  designed, but I believe it stands up to industry standards.
+                </p>
+              </div>
             </div>
-          </div>
-          <div className="left-text-stack">
-            React Gatsby Sass GraphQL NetlifyCMS
+            <div className="text-stack text-stack-left">
+              React Gatsby Sass GraphQL NetlifyCMS
+            </div>
           </div>
         </div>
       </Work>
@@ -472,57 +472,62 @@ const WorkSection2 = () => {
         }}
         className="background-3"
       >
-        <div className="work-section-3">
+        <div className="work-section">
           <StaticImage
             src="../assets/1-asado.png"
             alt="Asado Barcelona Demo Image"
             placeholder="blurred"
             layout="constrained"
             width={800}
-            className="left-image"
+            className="image image-left "
           />
-          <div className="right-title">
-            <div>
-              <a
-                href="https://github.com/rowanlg/asado-barca-v7"
-                target="_blank"
-                rel="noreferrer noopener"
-              >
-                <FontAwesomeIcon icon={faGithubSquare} />
-              </a>
-              <a
-                href="https://asadobarcelona.com/"
-                target="_blank"
-                rel="noreferrer noopener"
-              >
-                <FontAwesomeIcon
-                  icon={faArrowUpRightFromSquare}
-                  className="link-svg"
-                />
-              </a>
+          <div className="text-area text-area-right">
+            <div className="title-area title-right">
+              <div className="svg-container">
+                <a
+                  href="https://github.com/rowanlg/asado-barca-v7"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  <FontAwesomeIcon
+                    icon={faGithubSquare}
+                    className="link-svg svg-right"
+                  />
+                </a>
+                <a
+                  href="https://asadobarcelona.com/"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  <FontAwesomeIcon
+                    icon={faArrowUpRightFromSquare}
+                    className="link-svg svg-right"
+                  />
+                </a>
+              </div>
+              <p className="featured">Featured Project</p>
+              <h3>Asado Barcelona</h3>
             </div>
-            <p className="featured">Featured Project</p>
-            <h3>Asado Barcelona</h3>
-          </div>
 
-          <div className="right-text-box">
-            <div>
-              <p>
-                One of my first freelance web design and development jobs. I
-                decided that instead of the client requesting changes to their
-                site via me, I would build them a backend where they could
-                change the copy, images and menu themselves. To do this I used
-                Contentful's CMS with graphQL to query the data inputted into
-                the CMS' backend and show this programatically via a lighting
-                fast Gatsby site, and now the client is happy he doesn't have to
-                pay me for changes haha. I was particularly happy with the
-                lighthouse scores on this site, achieving an almost perfect 100
-                across the board.
-              </p>
+            <div className="text-box text-box-right">
+              <div className="border-yellow">
+                <p>
+                  One of my first freelance web design and development jobs. I
+                  decided that instead of the client requesting changes to their
+                  site via me, I would build them a backend where they could
+                  change the copy, images and menu themselves. To do this I used
+                  Contentful's CMS with graphQL to query the data inputted into
+                  the CMS' backend and show this programatically via a lighting
+                  fast Gatsby site, and now the client is happy he doesn't have
+                  to pay me for changes haha. I was particularly happy with the
+                  lighthouse scores on this site, achieving an almost perfect
+                  100 across the board.
+                </p>
+              </div>
             </div>
-          </div>
-          <div className="right-text-stack">
-            React Gatsby CSS-in-JS Contentful GraphQL
+            <div className="text-stack text-stack-right">
+              React Gatsby CSS-in-JS Contentful GraphQL
+            </div>
           </div>
         </div>
       </Work>
