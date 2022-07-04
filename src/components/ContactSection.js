@@ -2,13 +2,13 @@ import React from "react"
 import styled from "styled-components"
 import { colours } from "../utils/colours"
 import "../svg-background.css"
+import Div100vh from "react-div-100vh"
 
 const ContactContainer = styled.section`
   display: flex;
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
-  margin-bottom: -2.5rem;
   @media screen and (min-width: 500px) {
     padding-bottom: 100px;
   }
@@ -134,66 +134,68 @@ const ContactFormContainer = styled.div`
 
 const ContactSection = () => {
   return (
-    <ContactContainer id="contact" className="snap background-contact">
-      <div className="contact-header">
-        <h2>Let's Chat!</h2>
-        <p>Send a message here, and I’ll get back in touch asap :)</p>
-      </div>
-      <ContactFormContainer>
-        <form name="contact" method="POST" data-netlify="true">
-          <h4>Contact Form</h4>
-          <input type="hidden" name="form-name" value="contact" />
-          <div className="container">
-            <div>
+    <Div100vh>
+      <ContactContainer id="contact" className="snap background-contact">
+        <div className="contact-header">
+          <h2>Let's Chat!</h2>
+          <p>Send a message here, and I’ll get back in touch asap :)</p>
+        </div>
+        <ContactFormContainer>
+          <form name="contact" method="POST" data-netlify="true">
+            <h4>Contact Form</h4>
+            <input type="hidden" name="form-name" value="contact" />
+            <div className="container">
+              <div>
+                <p>
+                  <label htmlFor="name">Your Name</label> <br />
+                  <input
+                    className="border input"
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder=""
+                    required
+                  />
+                </p>
+                <p>
+                  <label htmlFor="email">Email</label> <br />
+                  <input
+                    className="border input"
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                  />
+                </p>
+                <p>
+                  <label htmlFor="number">Number</label> <br />
+                  <input
+                    className="filled input"
+                    type="number"
+                    id="number"
+                    name="number"
+                  />
+                </p>
+              </div>
               <p>
-                <label htmlFor="name">Your Name</label> <br />
-                <input
-                  className="border input"
-                  type="text"
-                  id="name"
-                  name="name"
-                  placeholder=""
-                  required
-                />
-              </p>
-              <p>
-                <label htmlFor="email">Email</label> <br />
-                <input
-                  className="border input"
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                />
-              </p>
-              <p>
-                <label htmlFor="number">Number</label> <br />
-                <input
+                <label htmlFor="message">Message</label> <br />
+                <textarea
                   className="filled input"
-                  type="number"
-                  id="number"
-                  name="number"
-                />
+                  id="message"
+                  name="message"
+                  required
+                ></textarea>
+              </p>
+              <p className="center">
+                <button className="submit" type="submit">
+                  Send message
+                </button>
               </p>
             </div>
-            <p>
-              <label htmlFor="message">Message</label> <br />
-              <textarea
-                className="filled input"
-                id="message"
-                name="message"
-                required
-              ></textarea>
-            </p>
-            <p className="center">
-              <button className="submit" type="submit">
-                Send message
-              </button>
-            </p>
-          </div>
-        </form>
-      </ContactFormContainer>
-    </ContactContainer>
+          </form>
+        </ContactFormContainer>
+      </ContactContainer>
+    </Div100vh>
   )
 }
 

@@ -4,6 +4,7 @@ import MainGraphic from "../assets/main-graphic.png"
 import { colours } from "../utils/colours"
 import { StaticImage } from "gatsby-plugin-image"
 import Icons from "./Icons"
+import Div100vh from "react-div-100vh"
 
 const Main = styled.section`
   width: 100vw;
@@ -215,54 +216,57 @@ const MainSection = () => {
   }, [])
 
   return (
-    <Main className="snap">
-      <BackgroundImgContainer
-        style={
-          loaded
-            ? timer
-              ? { opacity: "0.8" }
-              : { opacity: "1" }
-            : { opacity: "0" }
-        }
-      >
-        <StaticImage
-          src="../assets/main-graphic5.png"
-          alt="Backround Logo"
-          placeholder="tracedSVG"
-          width={800}
-        />
-      </BackgroundImgContainer>
-      <TextLeft
-        style={
-          loaded
-            ? { transform: "translate(0, 0)", opacity: "1" }
-            : { opacity: "0" }
-        }
-      >
-        <h3 className="hide-on-mobile">Frontend/Web3 Developer</h3>
-        <p>
-          I help design and build cool things for businesses, quickly and to the
-          highest standard. Unlike other tech focussed individuals, I connect
-          with my clients, and pride myself on bringing new perspectives to your
-          problems.
-        </p>
-      </TextLeft>
-      <TextRight
-        style={
-          loaded
-            ? { transform: "translate(0, 0)", opacity: "1" }
-            : { opacity: "0" }
-        }
-      >
-        <h1>
-          I genuinely love making things
-          <span style={{ color: colours.yellow }}>,</span> tech helps me do that
-          <span style={{ color: colours.red }}>.</span>
-        </h1>
-      </TextRight>
-      <Icons timer={timer} />
-      {/* <div className="breaker" /> */}
-    </Main>
+    <Div100vh>
+      <Main className="snap">
+        <BackgroundImgContainer
+          style={
+            loaded
+              ? timer
+                ? { opacity: "0.8" }
+                : { opacity: "1" }
+              : { opacity: "0" }
+          }
+        >
+          <StaticImage
+            src="../assets/main-graphic5.png"
+            alt="Backround Logo"
+            placeholder="tracedSVG"
+            width={800}
+          />
+        </BackgroundImgContainer>
+        <TextLeft
+          style={
+            loaded
+              ? { transform: "translate(0, 0)", opacity: "1" }
+              : { opacity: "0" }
+          }
+        >
+          <h3 className="hide-on-mobile">Frontend/Web3 Developer</h3>
+          <p>
+            I help design and build cool things for businesses, quickly and to
+            the highest standard. Unlike other tech focussed individuals, I
+            connect with my clients, and pride myself on bringing new
+            perspectives to your problems.
+          </p>
+        </TextLeft>
+        <TextRight
+          style={
+            loaded
+              ? { transform: "translate(0, 0)", opacity: "1" }
+              : { opacity: "0" }
+          }
+        >
+          <h1>
+            I genuinely love making things
+            <span style={{ color: colours.yellow }}>,</span> tech helps me do
+            that
+            <span style={{ color: colours.red }}>.</span>
+          </h1>
+        </TextRight>
+        <Icons timer={timer} />
+        {/* <div className="breaker" /> */}
+      </Main>
+    </Div100vh>
   )
 }
 

@@ -11,6 +11,7 @@ const Footer = styled.footer`
   align-items: flex-end;
   padding-bottom: 10px;
   font-size: 0.8rem;
+  margin-top: -2.5rem;
 `
 
 const FooterSection = () => {

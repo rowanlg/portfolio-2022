@@ -9,7 +9,6 @@ import WorkSection from "../components/WorkSection"
 import ContactSection from "../components/ContactSection"
 import FooterSection from "../components/FooterSection"
 import WorkSection2 from "../components/WorkSection2"
-import Div100vh from "react-div-100vh"
 
 const Main = styled.main`
   background: rgb(37, 20, 38);
@@ -34,24 +33,22 @@ const Main = styled.main`
 
 export default function Home() {
   return (
-    <Div100vh>
-      <Main id="about">
-        <Helmet htmlAttributes={{ lang: "en" }}>
-          <meta charSet="utf-8" />
-          <meta
-            name="description"
-            content="Portfolio site showing the work of r0o_dev"
-          />
-          <title>r0o.dev - Portfolio Site</title>
-          <link rel="canonical" href="http://r0o.dev" />
-        </Helmet>
-        <NavSection />
-        <MainSection />
-        {/* <WorkSection /> */}
-        <WorkSection2 />
-        <ContactSection />
-        <FooterSection />
-      </Main>
-    </Div100vh>
+    <Main id="about">
+      <Helmet htmlAttributes={{ lang: "en" }}>
+        <meta charSet="utf-8" />
+        <meta
+          name="description"
+          content="Portfolio site showing the work of r0o_dev"
+        />
+        <title>r0o.dev - Portfolio Site</title>
+        <link rel="canonical" href="http://r0o.dev" />
+      </Helmet>
+      <NavSection />
+      <MainSection />
+      {/* <WorkSection /> */}
+      <WorkSection2 />
+      <ContactSection />
+      <FooterSection />
+    </Main>
   )
 }
