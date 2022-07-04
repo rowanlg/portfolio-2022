@@ -32,6 +32,7 @@ const WorkLeft = styled.div`
   /* width: 100vw; */
   /* background-color: blue; */
   transition: opacity 1s ease-in;
+  transition-delay: 300ms;
   height: 100vh;
   scroll-snap-align: center;
   display: flex;
@@ -43,6 +44,7 @@ const WorkRight = styled.div`
   /* width: 100vw; */
   /* background-color: blue; */
   transition: opacity 1s ease-in;
+  transition-delay: 300ms;
   height: 100vh;
   scroll-snap-align: center;
   display: flex;
@@ -106,6 +108,7 @@ const WorkSection2 = () => {
             placeholder="blurred"
             layout="constrained"
             width={800}
+            className="delay-500"
           />
         )}
         <WorkText>
