@@ -8,11 +8,27 @@ import MainSection from "../components/MainSection"
 import WorkSection from "../components/WorkSection"
 import ContactSection from "../components/ContactSection"
 import FooterSection from "../components/FooterSection"
+import WorkSection2 from "../components/WorkSection2"
 
 const Main = styled.main`
-  background-color: ${colours.dark};
-  height: 200vh;
+  background: rgb(37, 20, 38);
+  background: linear-gradient(
+    180deg,
+    rgba(37, 20, 38, 1) 0%,
+    rgba(37, 20, 38, 1) 20%,
+    rgba(65, 157, 120, 1) 500%
+  );
   color: ${colours.light};
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  position: relative;
+  max-height: 100vh;
+  overflow-y: auto;
+  section.snap {
+    scroll-snap-align: start;
+    height: 100vh;
+    width: 100vw;
+  }
 `
 
 export default function Home() {
@@ -29,7 +45,8 @@ export default function Home() {
       </Helmet>
       <NavSection />
       <MainSection />
-      <WorkSection />
+      {/* <WorkSection /> */}
+      <WorkSection2 />
       <ContactSection />
       <FooterSection />
     </Main>

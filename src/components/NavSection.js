@@ -82,9 +82,9 @@ const HiddenMenu = styled.div`
   height: 300vh;
   width: 200vw;
   background-color: ${colours.light};
-  -webkit-transition: all 1.5s ease-in-out;
-  -o-transition: all 1.5s ease-in-out;
-  transition: all 1.5s ease-in-out;
+  -webkit-transition: transform 1.5s ease-in-out;
+  -o-transition: transform 1.5s ease-in-out;
+  transition: transform 1.5s ease-in-out;
   -webkit-transform: rotate(65deg);
   -ms-transform: rotate(65deg);
   transform: rotate(65deg);
@@ -134,23 +134,23 @@ const NavSection = () => {
     transform: "translate(-210vw, 0)",
   })
 
-  const handleScroll = debounce(() => {
-    const currentScrollPos = window.pageYOffset
+  // const handleScroll = debounce(() => {
+  //   const currentScrollPos = window.pageYOffset
 
-    setVisible(
-      toggled
-        ? true
-        : (prevScrollPos > currentScrollPos &&
-            prevScrollPos - currentScrollPos > 70) ||
-            currentScrollPos < 10
-    )
-    setPrevScrollPos(currentScrollPos)
-  }, 100)
+  //   setVisible(
+  //     toggled
+  //       ? true
+  //       : (prevScrollPos > currentScrollPos &&
+  //           prevScrollPos - currentScrollPos > 70) ||
+  //           currentScrollPos < 10
+  //   )
+  //   setPrevScrollPos(currentScrollPos)
+  // }, 100)
 
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [prevScrollPos, visible, handleScroll])
+  // useEffect(() => {
+  //   window.addEventListener("scroll", handleScroll)
+  //   return () => window.removeEventListener("scroll", handleScroll)
+  // }, [prevScrollPos, visible, handleScroll])
 
   return (
     <NavContainer style={{ top: visible ? "0" : "-100px" }}>

@@ -1,14 +1,20 @@
 import React from "react"
 import styled from "styled-components"
 import { colours } from "../utils/colours"
+import "../svg-background.css"
 
-const ContactContainer = styled.div`
+const ContactContainer = styled.section`
   display: flex;
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
+  margin-bottom: -2.5rem;
   @media screen and (min-width: 500px) {
     padding-bottom: 100px;
+  }
+  @media screen and (min-width: 1000px) {
+    align-items: center;
+    flex-direction: row;
   }
 
   .contact-header {
@@ -17,7 +23,7 @@ const ContactContainer = styled.div`
     align-items: center;
     flex-direction: column;
     text-align: center;
-    margin: 6rem auto 5rem auto;
+    margin: auto;
     h2 {
       font-size: 1.2rem;
       margin-bottom: 0.2rem;
@@ -25,7 +31,7 @@ const ContactContainer = styled.div`
     }
     p {
       font-size: 0.8rem;
-      max-width: 80vw;
+      max-width: 350px;
     }
   }
 `
@@ -38,8 +44,11 @@ const ContactFormContainer = styled.div`
   align-items: center;
   @media screen and (min-width: 500px) {
     border-radius: 5px;
-    margin: auto;
+    margin: 0 auto auto auto;
     width: 500px;
+  }
+  @media screen and (min-width: 1000px) {
+    margin: auto;
   }
   form {
     color: ${colours.dark};
@@ -125,9 +134,9 @@ const ContactFormContainer = styled.div`
 
 const ContactSection = () => {
   return (
-    <ContactContainer id="contact">
+    <ContactContainer id="contact" className="snap background-contact">
       <div className="contact-header">
-        <h2>Get in Touch!</h2>
+        <h2>Let's Chat!</h2>
         <p>Send a message here, and I’ll get back in touch asap :)</p>
       </div>
       <ContactFormContainer>

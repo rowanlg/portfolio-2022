@@ -12,7 +12,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons"
 import { faGithubSquare } from "@fortawesome/free-brands-svg-icons"
 
-const WorkContainer = styled.div`
+const WorkContainer = styled.section`
   background-color: ${colours.light};
   display: flex;
   justify-content: center;
@@ -110,7 +110,7 @@ const WorkSection = () => {
   const [hover, setHover] = useState("")
 
   return (
-    <WorkContainer id="work">
+    <WorkContainer id="work" className="snap">
       <h2>Projects</h2>
       <div className="line" />
       <Work style={{ marginTop: "1rem" }}>

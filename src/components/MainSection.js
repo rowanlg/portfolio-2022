@@ -5,7 +5,7 @@ import { colours } from "../utils/colours"
 import { StaticImage } from "gatsby-plugin-image"
 import Icons from "./Icons"
 
-const Main = styled.div`
+const Main = styled.section`
   width: 100vw;
   height: 100vh;
   display: grid;
@@ -14,6 +14,7 @@ const Main = styled.div`
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   user-select: none;
+
   @media screen and (min-width: 500px) {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -33,17 +34,64 @@ const Main = styled.div`
     @media screen and (min-width: 500px) {
       grid-area: 5 / 2 / 6 / 12;
     }
+    div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
     svg {
-      margin: 0.4rem;
+      margin: 0.1rem;
       height: auto;
-      width: 40px;
       opacity: 0.5;
-      transition: all 0.2s linear;
+      transition: all 1s linear;
+      @media screen and (min-width: 600px) {
+        margin: 0.4rem;
+        width: 40px;
+      }
     }
     svg:hover {
       opacity: 1;
       width: 45px;
     }
+    .delay-100 {
+      transition-delay: 100ms;
+    }
+    .delay-150 {
+      transition-delay: 150ms;
+    }
+    .delay-200 {
+      transition-delay: 200ms;
+    }
+    .delay-250 {
+      transition-delay: 250ms;
+    }
+    .delay-300 {
+      transition-delay: 300ms;
+    }
+    .delay-350 {
+      transition-delay: 350ms;
+    }
+    .delay-400 {
+      transition-delay: 400ms;
+    }
+    .delay-450 {
+      transition-delay: 450ms;
+    }
+    .delay-500 {
+      transition-delay: 500ms;
+    }
+    .delay-550 {
+      transition-delay: 550ms;
+    }
+    .delay-600 {
+      transition-delay: 600ms;
+    }
+  }
+  .breaker {
+    width: 70vw;
+    height: 3px;
+    border-radius: 5px;
+    background-color: ${colours.light};
   }
 `
 
@@ -167,7 +215,7 @@ const MainSection = () => {
   }, [])
 
   return (
-    <Main>
+    <Main className="snap">
       <BackgroundImgContainer
         style={
           loaded
@@ -213,6 +261,7 @@ const MainSection = () => {
         </h1>
       </TextRight>
       <Icons timer={timer} />
+      {/* <div className="breaker" /> */}
     </Main>
   )
 }

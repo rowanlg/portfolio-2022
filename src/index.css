@@ -9,3 +9,12 @@ body {
   background-color: #251426;
   overflow-x: hidden;
 }
+
+/* .container {
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+.container div {
+  scroll-snap-align: start;
+  height: 100vh;
+} */
