@@ -6,11 +6,12 @@ import { colours } from "../utils/colours"
 import { debounce } from "../utils/debounce"
 import Boop from "./Boop"
 import { Link } from "gatsby"
+import "../svg-background.css"
 
 const NavContainer = styled.div`
   margin: 0 auto;
   width: 100vw;
-  background-color: ${colours.dark};
+  /* background-color: ${colours.dark}; */
   position: fixed;
   top: 0;
   transition: 0.2s linear all;
@@ -165,7 +166,11 @@ const NavSection = () => {
           </Link>
         </Boop>
 
-        <HiddenMenu as={animated.div} style={toggled ? style : {}}>
+        <HiddenMenu
+          as={animated.div}
+          style={toggled ? style : {}}
+          className="menu-background"
+        >
           <div>
             <Boop rotation={10} timing={100}>
               <Link

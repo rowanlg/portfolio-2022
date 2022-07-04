@@ -120,7 +120,7 @@ const TextLeft = styled.div`
   transition: all 1s ease-in-out;
   transition-delay: 700ms;
   /* transition: all 1s cubic-bezier(0.5, 1.8, 0.3, 0.8); */
-  transform: translate(-120vw, 0);
+  transform: translate(120vw, 0);
 
   .hide-on-mobile {
     @media screen and (max-width: 500px) {
@@ -153,17 +153,17 @@ const TextLeft = styled.div`
       max-width: 250px;
     }
     @media screen and (min-width: 850px) {
-      font-size: 0.9rem;
-      max-width: 280px;
+      font-size: 1.4rem;
+      max-width: 220px;
     }
   }
   @media screen and (min-width: 500px) {
-    grid-area: 2 / 1 / 5 / 7;
-    margin-right: 0.4rem;
-    margin-top: -4rem;
-    text-align: right;
-    align-items: flex-end;
+    /* grid-area: 2 / 7 / 5 / 13; */
+    grid-area: 2 / 7 / 5 / 10;
+    text-align: left;
+    align-items: flex-start;
     justify-content: center;
+    margin-left: -0.5rem;
   }
 `
 
@@ -181,7 +181,7 @@ const TextRight = styled.div`
   transition: all 1s ease-in-out;
   transition-delay: 700ms;
   /* transition: all 1s cubic-bezier(0.3, 1.8, 0.44, 0.49); */
-  transform: translate(120vw, 0);
+  transform: translate(-120vw, 0);
   transition-delay: 300ms;
   h1 {
     font-weight: 800;
@@ -192,16 +192,19 @@ const TextRight = styled.div`
     }
     @media screen and (min-width: 850px) {
       font-size: 2.2rem;
-      max-width: 290px;
+      max-width: 320px;
     }
   }
   @media screen and (min-width: 500px) {
-    grid-area: 2 / 7 / 5 / 13;
-    align-items: flex-start;
-    text-align: left;
-    width: 90%;
-    margin: 0;
-    max-width: auto;
+    /* grid-area: 2 / 1 / 5 / 7; */
+    grid-area: 2 / 4 / 5 / 7;
+    align-items: flex-end;
+    text-align: right;
+    /* width: 90%; */
+    margin: auto;
+    margin-right: 0;
+    margin-top: 10rem;
+    /* max-width: auto; */
   }
 `
 
@@ -241,12 +244,20 @@ const MainSection = () => {
               : { opacity: "0" }
           }
         >
-          <h3 className="hide-on-mobile">Frontend/Web3 Developer</h3>
           <p>
-            I help design and build cool things for businesses, quickly and to
-            the highest standard. Unlike other tech focussed individuals, I
-            connect with my clients, and pride myself on bringing new
-            perspectives to your problems.
+            <b>
+              <em>efficiently</em>
+              <span style={{ color: colours.yellow }}>,</span>
+            </b>{" "}
+            through{" "}
+            <b>
+              new perspectives<span style={{ color: colours.green }}>,</span>
+            </b>{" "}
+            and to an{" "}
+            <b>
+              <em>extremely</em> high standard
+              <span style={{ color: colours.red }}>.</span>
+            </b>
           </p>
         </TextLeft>
         <TextRight
@@ -257,10 +268,9 @@ const MainSection = () => {
           }
         >
           <h1>
-            I genuinely love making things
-            <span style={{ color: colours.yellow }}>,</span> tech helps me do
-            that
-            <span style={{ color: colours.red }}>.</span>
+            {" "}
+            I build things that help <em>connect people</em>
+            <span style={{ color: colours.yellow }}>,</span>
           </h1>
         </TextRight>
         <Icons timer={timer} />

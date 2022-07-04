@@ -7,8 +7,7 @@ import Div100vh from "react-div-100vh"
 const ContactContainer = styled.section`
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  flex-direction: column;
+  align-items: center;
   @media screen and (min-width: 500px) {
     padding-bottom: 100px;
   }
@@ -34,6 +33,18 @@ const ContactContainer = styled.section`
       max-width: 350px;
     }
   }
+
+  .flex-container {
+    @media screen and (min-width: 1000px) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      div {
+        margin: 1rem;
+      }
+    }
+  }
 `
 
 const ContactFormContainer = styled.div`
@@ -42,9 +53,10 @@ const ContactFormContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: -2rem;
   @media screen and (min-width: 500px) {
     border-radius: 5px;
-    margin: 0 auto auto auto;
+    margin: 0 auto -6rem auto;
     width: 500px;
   }
   @media screen and (min-width: 1000px) {
@@ -52,7 +64,7 @@ const ContactFormContainer = styled.div`
   }
   form {
     color: ${colours.dark};
-    margin: 7rem 0;
+    margin: 2rem 0;
     @media screen and (min-width: 500px) {
       margin: 3rem 0;
       .container {
@@ -65,7 +77,7 @@ const ContactFormContainer = styled.div`
         div:nth-child(1) {
           grid-area: 1 / 1 / 5 / 3;
         }
-        p:nth-child(2) {
+        div:nth-child(2) {
           grid-area: 1 / 3 / 5 / 5;
         }
         p:nth-child(3) {
@@ -75,6 +87,7 @@ const ContactFormContainer = styled.div`
           display: flex;
           justify-content: center;
           align-items: center;
+          flex-direction: column;
         }
       }
     }
@@ -136,64 +149,68 @@ const ContactSection = () => {
   return (
     <Div100vh>
       <ContactContainer id="contact" className="snap background-contact">
-        <div className="contact-header">
-          <h2>Let's Chat!</h2>
-          <p>Send a message here, and I’ll get back in touch asap :)</p>
-        </div>
-        <ContactFormContainer>
-          <form name="contact" method="POST" data-netlify="true">
-            <h4>Contact Form</h4>
-            <input type="hidden" name="form-name" value="contact" />
-            <div className="container">
-              <div>
-                <p>
-                  <label htmlFor="name">Your Name</label> <br />
-                  <input
-                    className="border input"
-                    type="text"
-                    id="name"
-                    name="name"
-                    placeholder=""
-                    required
-                  />
-                </p>
-                <p>
-                  <label htmlFor="email">Email</label> <br />
-                  <input
-                    className="border input"
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                  />
-                </p>
-                <p>
-                  <label htmlFor="number">Number</label> <br />
-                  <input
-                    className="filled input"
-                    type="number"
-                    id="number"
-                    name="number"
-                  />
+        <div className="flex-container">
+          <div className="contact-header">
+            <h2>Let's Chat!</h2>
+            <p>Send a message here, and I’ll get back in touch asap :)</p>
+          </div>
+          <ContactFormContainer>
+            <form name="contact" method="POST" data-netlify="true">
+              <h4>Contact Form</h4>
+              <input type="hidden" name="form-name" value="contact" />
+              <div className="container">
+                <div>
+                  <p>
+                    <label htmlFor="name">Your Name</label> <br />
+                    <input
+                      className="border input"
+                      type="text"
+                      id="name"
+                      name="name"
+                      placeholder=""
+                      required
+                    />
+                  </p>
+                  <p>
+                    <label htmlFor="email">Email</label> <br />
+                    <input
+                      className="border input"
+                      type="email"
+                      id="email"
+                      name="email"
+                      required
+                    />
+                  </p>
+                  <p>
+                    <label htmlFor="number">Number</label> <br />
+                    <input
+                      className="filled input"
+                      type="number"
+                      id="number"
+                      name="number"
+                    />
+                  </p>
+                </div>
+                <div>
+                  <p>
+                    <label htmlFor="message">Message</label> <br />
+                    <textarea
+                      className="filled input"
+                      id="message"
+                      name="message"
+                      required
+                    ></textarea>
+                  </p>
+                </div>
+                <p className="center">
+                  <button className="submit" type="submit">
+                    Send message
+                  </button>
                 </p>
               </div>
-              <p>
-                <label htmlFor="message">Message</label> <br />
-                <textarea
-                  className="filled input"
-                  id="message"
-                  name="message"
-                  required
-                ></textarea>
-              </p>
-              <p className="center">
-                <button className="submit" type="submit">
-                  Send message
-                </button>
-              </p>
-            </div>
-          </form>
-        </ContactFormContainer>
+            </form>
+          </ContactFormContainer>
+        </div>
       </ContactContainer>
     </Div100vh>
   )
