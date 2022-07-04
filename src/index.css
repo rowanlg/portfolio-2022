@@ -8,6 +8,11 @@
 body {
   background-color: #160c17;
   overflow-x: hidden;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+}
+html {
+  min-height: -webkit-fill-available;
 }
 
 /* .container {
