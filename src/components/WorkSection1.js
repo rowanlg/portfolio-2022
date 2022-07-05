@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { StaticImage } from "gatsby-plugin-image"
 import { colours } from "../utils/colours"
 import { useInView } from "react-hook-inview"
@@ -8,6 +8,9 @@ import { faGithubSquare } from "@fortawesome/free-brands-svg-icons"
 import "../svg-background.css"
 import { WorkContainer, PageIndicators, Work } from "./WorkStyles"
 import scrollTo from "gatsby-plugin-smoothscroll"
+import Slider from "react-slick"
+import "slick-carousel/slick/slick.css"
+import "slick-carousel/slick/slick-theme.css"
 
 const WorkSection1 = ({ innerheight }) => {
   const [ref, isVisible] = useInView({
@@ -25,6 +28,19 @@ const WorkSection1 = ({ innerheight }) => {
   const [allinView, isAllVisible] = useInView({
     threshold: 0.2,
   })
+
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 2000,
+    autoplaySpeed: 7000,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    autoplay: true,
+    centerMode: true,
+    centerPadding: "0px",
+  }
 
   return (
     <WorkContainer ref={allinView} id="work-1">
@@ -68,15 +84,35 @@ const WorkSection1 = ({ innerheight }) => {
         id="work-section"
       >
         <div className="work-section">
-          <StaticImage
+          {/* <StaticImage
             src="../assets/1-asado.png"
             alt="Asado Barcelona Demo Image"
             placeholder="blurred"
             layout="constrained"
             className="image image-left"
-            // objectFit="contain"
-            // transformOptions={{ cropFocus: "entropy" }}
-          />
+          /> */}
+          <div className="image image-left">
+            {isVisible ? (
+              <Slider {...settings}>
+                <StaticImage
+                  src="../assets/1-asado.png"
+                  alt="Asado Barcelona Demo Image"
+                  placeholder="blurred"
+                  layout="constrained"
+                  className="image image-left"
+                />
+                <StaticImage
+                  src="../assets/1-asado-b.png"
+                  alt="Asado Barcelona Demo Image"
+                  placeholder="blurred"
+                  layout="constrained"
+                  className="image image-left"
+                />
+              </Slider>
+            ) : (
+              <div />
+            )}
+          </div>
           <div className="text-area text-area-right">
             <div className="title-area title-right">
               <div className="svg-container">

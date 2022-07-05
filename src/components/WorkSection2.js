@@ -7,6 +7,9 @@ import { faGithubSquare } from "@fortawesome/free-brands-svg-icons"
 import "../svg-background.css"
 import { WorkContainer, PageIndicators, Work } from "./WorkStyles"
 import scrollTo from "gatsby-plugin-smoothscroll"
+import Slider from "react-slick"
+import "slick-carousel/slick/slick.css"
+import "slick-carousel/slick/slick-theme.css"
 
 const WorkSection2 = ({ innerheight }) => {
   const [ref, isVisible] = useInView({
@@ -24,6 +27,19 @@ const WorkSection2 = ({ innerheight }) => {
   const [allinView, isAllVisible] = useInView({
     threshold: 0.2,
   })
+
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 2000,
+    autoplaySpeed: 7000,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    autoplay: true,
+    centerMode: true,
+    centerPadding: "0px",
+  }
 
   return (
     <WorkContainer ref={allinView} id="work-2">
@@ -67,14 +83,37 @@ const WorkSection2 = ({ innerheight }) => {
         className="background-2"
       >
         <div className="work-section">
-          <StaticImage
+          {/* <StaticImage
             src="../assets/2-bf.png"
             alt="Bald Flavours Demo Image"
             placeholder="blurred"
             layout="constrained"
             width={800}
             className="image image-right"
-          />
+          /> */}
+
+          <div className="image image-right">
+            {isVisible2 ? (
+              <Slider {...settings}>
+                <StaticImage
+                  src="../assets/2-bf.png"
+                  alt="Asado Barcelona Demo Image"
+                  placeholder="blurred"
+                  layout="constrained"
+                  className="image image-left"
+                />
+                <StaticImage
+                  src="../assets/2-bf-b.png"
+                  alt="Asado Barcelona Demo Image"
+                  placeholder="blurred"
+                  layout="constrained"
+                  className="image image-left"
+                />
+              </Slider>
+            ) : (
+              <div />
+            )}
+          </div>
           <div className="text-area text-area-left">
             <div className="title-area title-left">
               <div className="svg-container">

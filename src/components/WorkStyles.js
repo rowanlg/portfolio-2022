@@ -4,6 +4,7 @@ import { colours } from "../utils/colours"
 export const WorkContainer = styled.section`
   transition: all 1s linear;
   overflow-y: auto;
+  /* @import "~react-image-gallery/styles/css/image-gallery.css"; */
 
   img {
     border-radius: 5px;
@@ -18,6 +19,8 @@ export const WorkContainer = styled.section`
     border: 2px solid rgba(247, 179, 43, 0.5);
   }
   .work-section {
+    /* ////////////////////////////////////////// */
+
     /* display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -49,9 +52,12 @@ export const WorkContainer = styled.section`
       order: 4;
       z-index: 1;
       border-radius: 5px;
-      max-width: 500px;
+      max-width: 80vw;
       @media screen and (min-width: 700px) {
-        margin: 1rem;
+        max-width: 500px;
+      }
+      @media screen and (min-width: 700px) {
+        /* margin: 1rem; */
         max-width: none;
       }
     }
