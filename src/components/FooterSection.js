@@ -5,13 +5,12 @@ import { colours } from "../utils/colours"
 const Footer = styled.footer`
   width: 100vw;
   height: 50px;
-  bottom: 0;
   display: flex;
   justify-content: center;
   align-items: flex-end;
   padding-bottom: 10px;
   font-size: 0.8rem;
-  margin-top: -2.5rem;
+  margin-top: -50px;
 `
 
 const FooterSection = () => {

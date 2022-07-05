@@ -13,6 +13,7 @@ const Main = styled.section`
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   user-select: none;
+  overflow-x: hidden;
 
   @media screen and (min-width: 500px) {
     display: grid;
@@ -26,7 +27,6 @@ const Main = styled.section`
     justify-content: center;
     align-items: flex-end;
     padding-bottom: 1rem;
-    /* margin-bottom: -8rem; */
     transition: opacity 2s linear;
     transition-delay: 1000ms;
     grid-area: 4 / 1 / 5 / 5;
@@ -217,7 +217,7 @@ const MainSection = ({ innerheight }) => {
   }, [])
 
   return (
-    <Main className="snap" style={{ height: innerheight }}>
+    <Main className="snap" style={{ height: innerheight }} id="about">
       <BackgroundImgContainer
         style={
           loaded

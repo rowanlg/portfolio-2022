@@ -2,18 +2,20 @@ import React from "react"
 import styled from "styled-components"
 import { colours } from "../utils/colours"
 import "../svg-background.css"
-import Div100vh from "react-div-100vh"
 
 const ContactContainer = styled.section`
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   @media screen and (min-width: 500px) {
-    padding-bottom: 100px;
+    padding-top: 100px;
+
+    align-items: center;
   }
   @media screen and (min-width: 1000px) {
     align-items: center;
     flex-direction: row;
+    padding: 100px;
   }
 
   .contact-header {
@@ -26,8 +28,18 @@ const ContactContainer = styled.section`
     /* border: 2px solid rgba(232, 95, 92, 0.6); */
     border-radius: 5px;
     background-color: rgb(22, 12, 23, 1);
-    height: 515px;
-    width: 500px;
+    width: auto;
+    padding: 6rem 0 4rem;
+    @media screen and (min-width: 500px) {
+      width: 500px;
+      height: 300px;
+      margin-bottom: 1rem;
+    }
+    @media screen and (min-width: 1000px) {
+      width: 500px;
+      height: 515px;
+      margin-bottom: 0;
+    }
     h2 {
       font-size: 1.2rem;
       margin-bottom: 0.2rem;
@@ -58,10 +70,11 @@ const ContactFormContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: -2rem;
+  margin-bottom: 50px;
+  position: relative;
   @media screen and (min-width: 500px) {
     border-radius: 5px;
-    margin: 0 auto -6rem auto;
+    margin: 0 auto 50px auto;
     width: 500px;
   }
   @media screen and (min-width: 1000px) {
@@ -120,7 +133,7 @@ const ContactFormContainer = styled.div`
         margin: 0.4rem 0;
         width: 200px;
         border-radius: 5px;
-        padding: 5px;
+        padding: 10px;
       }
       .input:focus {
         border-color: ${colours.red};
@@ -130,7 +143,7 @@ const ContactFormContainer = styled.div`
         border: 2px solid rgb(232, 95, 92, 0.25);
       }
       .filled {
-        background-color: rgb(232, 95, 92, 0.25);
+        background-color: #f6d3d3;
         /* border: 2px solid rgb(232, 95, 92, 0.25); */
         border: none;
       }
@@ -150,74 +163,76 @@ const ContactFormContainer = styled.div`
   }
 `
 
-const ContactSection = () => {
+const ContactSection = ({ innerheight }) => {
   return (
-    <Div100vh>
-      <ContactContainer id="contact" className="snap background-contact">
-        <div className="flex-container">
-          <div className="contact-header">
-            <h2>Let's Chat!</h2>
-            <p>Send a message here, and I’ll get back in touch asap :)</p>
-          </div>
-          <ContactFormContainer>
-            <form name="contact" method="POST" data-netlify="true">
-              <h4>Contact Form</h4>
-              <input type="hidden" name="form-name" value="contact" />
-              <div className="container">
-                <div>
-                  <p>
-                    <label htmlFor="name">Your Name</label> <br />
-                    <input
-                      className="border input"
-                      type="text"
-                      id="name"
-                      name="name"
-                      placeholder=""
-                      required
-                    />
-                  </p>
-                  <p>
-                    <label htmlFor="email">Email</label> <br />
-                    <input
-                      className="border input"
-                      type="email"
-                      id="email"
-                      name="email"
-                      required
-                    />
-                  </p>
-                  <p>
-                    <label htmlFor="number">Number</label> <br />
-                    <input
-                      className="filled input"
-                      type="number"
-                      id="number"
-                      name="number"
-                    />
-                  </p>
-                </div>
-                <div>
-                  <p>
-                    <label htmlFor="message">Message</label> <br />
-                    <textarea
-                      className="filled input"
-                      id="message"
-                      name="message"
-                      required
-                    ></textarea>
-                  </p>
-                </div>
-                <p className="center">
-                  <button className="submit" type="submit">
-                    Send message
-                  </button>
+    <ContactContainer
+      id="contact"
+      className="snap background-contact"
+      style={{ minHeight: innerheight }}
+    >
+      <div className="flex-container">
+        <div className="contact-header background-1">
+          <h2>Let's Chat!</h2>
+          <p>Send a message here, and I’ll get back in touch asap :)</p>
+        </div>
+        <ContactFormContainer className="background-2">
+          <form name="contact" method="POST" data-netlify="true">
+            <h4>Contact Form</h4>
+            <input type="hidden" name="form-name" value="contact" />
+            <div className="container">
+              <div>
+                <p>
+                  <label htmlFor="name">Your Name</label> <br />
+                  <input
+                    className="border input"
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder=""
+                    required
+                  />
+                </p>
+                <p>
+                  <label htmlFor="email">Email</label> <br />
+                  <input
+                    className="border input"
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                  />
+                </p>
+                <p>
+                  <label htmlFor="number">Number</label> <br />
+                  <input
+                    className="filled input"
+                    type="number"
+                    id="number"
+                    name="number"
+                  />
                 </p>
               </div>
-            </form>
-          </ContactFormContainer>
-        </div>
-      </ContactContainer>
-    </Div100vh>
+              <div>
+                <p>
+                  <label htmlFor="message">Message</label> <br />
+                  <textarea
+                    className="filled input"
+                    id="message"
+                    name="message"
+                    required
+                  ></textarea>
+                </p>
+              </div>
+              <p className="center">
+                <button className="submit" type="submit">
+                  Send message
+                </button>
+              </p>
+            </div>
+          </form>
+        </ContactFormContainer>
+      </div>
+    </ContactContainer>
   )
 }
 

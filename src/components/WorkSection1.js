@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { StaticImage } from "gatsby-plugin-image"
+import { colours } from "../utils/colours"
 import { useInView } from "react-hook-inview"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons"
@@ -7,7 +8,7 @@ import { faGithubSquare } from "@fortawesome/free-brands-svg-icons"
 import "../svg-background.css"
 import { WorkContainer, PageIndicators, Work } from "./WorkStyles"
 
-const WorkSection2 = ({ innerheight }) => {
+const WorkSection1 = ({ innerheight }) => {
   const [hover, setHover] = useState("")
   const [ref, isVisible] = useInView({
     threshold: 0.2,
@@ -26,7 +27,7 @@ const WorkSection2 = ({ innerheight }) => {
   })
 
   return (
-    <WorkContainer ref={allinView}>
+    <WorkContainer id="work" ref={allinView}>
       <PageIndicators
         style={{ opacity: isAllVisible ? "1" : "0", height: innerheight }}
       >
@@ -52,33 +53,36 @@ const WorkSection2 = ({ innerheight }) => {
           }
         />
       </PageIndicators>
-
       <Work
-        ref={ref2}
+        ref={ref}
         style={{
-          opacity: isVisible2 ? "1" : "0",
+          opacity: isVisible ? "1" : "0",
           height: innerheight,
         }}
-        className="background-2"
+        className="background-1"
       >
         <div className="work-section">
           <StaticImage
-            src="../assets/2-bf.png"
-            alt="Bald Flavours Demo Image"
+            src="../assets/1-asado.png"
+            alt="Asado Barcelona Demo Image"
             placeholder="blurred"
             layout="constrained"
-            width={800}
-            className="image image-right"
+            className="image image-left"
+            // objectFit="contain"
+            // transformOptions={{ cropFocus: "entropy" }}
           />
-          <div className="text-area text-area-left">
-            <div className="title-area title-left">
+          <div className="text-area text-area-right">
+            <div className="title-area title-right">
               <div className="svg-container">
                 <a
                   href="https://github.com/rowanlg/asado-barca-v7"
                   target="_blank"
                   rel="noreferrer noopener"
                 >
-                  <FontAwesomeIcon icon={faGithubSquare} className="svg-left" />
+                  <FontAwesomeIcon
+                    icon={faGithubSquare}
+                    className="link-svg svg-right"
+                  />
                 </a>
                 <a
                   href="https://asadobarcelona.com/"
@@ -87,29 +91,33 @@ const WorkSection2 = ({ innerheight }) => {
                 >
                   <FontAwesomeIcon
                     icon={faArrowUpRightFromSquare}
-                    className="link-svg svg-left"
+                    className="link-svg svg-right"
                   />
                 </a>
               </div>
               <p className="featured">Featured Project</p>
-              <h3>Bald Flavours</h3>
+              <h3>Asado Barcelona</h3>
             </div>
 
-            <div className="text-box text-box-left mobile-hide">
-              <div className="border-green">
+            <div className="text-box text-box-right mobile-hide">
+              <div className="border-red">
                 <p>
-                  A full blog site, with backend via Netlify, for a food writer
-                  from Bristol. The site allows them to publish reviews and
-                  recipes, which are inputted into the backend on Netlify, these
-                  are then categorized on the site and published. Apart from a
-                  clean design the client requested a light/dark mode. Which I
-                  implemented, this was the first blog style site I had
-                  designed, but I believe it stands up to industry standards.
+                  One of my first freelance web design and development jobs. I
+                  decided that instead of the client requesting changes to their
+                  site via me, I would build them a backend where they could
+                  change the copy, images and menu themselves. To do this I used
+                  Contentful's CMS with graphQL to query the data inputted into
+                  the CMS' backend and show this programatically via a lighting
+                  fast Gatsby site, and now the client is happy he doesn't have
+                  to pay me for changes haha. I was particularly happy with the
+                  lighthouse scores on this site, achieving an almost perfect
+                  100 across the board.
                 </p>
               </div>
             </div>
-            <div className="text-stack text-stack-left mobile-hide">
-              React Gatsby Sass GraphQL NetlifyCMS
+
+            <div className="text-stack text-stack-right mobile-hide">
+              React Gatsby CSS-in-JS Contentful GraphQL
             </div>
           </div>
           <ul className="mobile-list">
@@ -128,4 +136,4 @@ const WorkSection2 = ({ innerheight }) => {
   )
 }
 
-export default WorkSection2
+export default WorkSection1

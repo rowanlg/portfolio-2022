@@ -80,7 +80,7 @@ const HiddenMenu = styled.div`
   position: fixed;
   left: 210vw;
   top: 0;
-  height: 300vh;
+  /* height: 300vh; */
   width: 200vw;
   background-color: ${colours.light};
   -webkit-transition: transform 1.5s ease-in-out;
@@ -126,13 +126,14 @@ const HiddenMenu = styled.div`
   /* transform: translate(100vw, 0px); */
 `
 
-const NavSection = () => {
+const NavSection = ({ innerheight }) => {
   const [toggled, setToggled] = useState(false)
   const [prevScrollPos, setPrevScrollPos] = useState(0)
   const [visible, setVisible] = useState(true)
 
   const style = useSpring({
     transform: "translate(-210vw, 0)",
+    height: innerheight * 3,
   })
 
   // const handleScroll = debounce(() => {
@@ -168,7 +169,7 @@ const NavSection = () => {
 
         <HiddenMenu
           as={animated.div}
-          style={toggled ? style : {}}
+          style={toggled ? style : { height: innerheight * 3 }}
           className="menu-background"
         >
           <div>
