@@ -9,8 +9,8 @@ import ContactSection from "../components/ContactSection"
 import FooterSection from "../components/FooterSection"
 import WorkSection1 from "../components/WorkSection1"
 import WorkSection2 from "../components/WorkSection2"
-import WorkSection3 from "../components/WorkSection3"
 import useWindowSize from "../utils/useWindowSize"
+import AboutSection from "../components/AboutSection"
 
 export default function Home() {
   const innerheight = useWindowSize().height
@@ -43,9 +43,10 @@ export default function Home() {
 
       <NavSection innerheight={innerheight} />
       <MainSection innerheight={innerheight} />
+      <AboutSection innerheight={innerheight} />
       <WorkSection1 innerheight={innerheight} />
       <WorkSection2 innerheight={innerheight} />
-      <WorkSection3 innerheight={innerheight} />
+      {/* <WorkSection3 innerheight={innerheight} /> */}
       <ContactSection innerheight={innerheight} />
       <FooterSection />
     </Main>

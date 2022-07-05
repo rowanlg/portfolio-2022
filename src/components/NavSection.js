@@ -7,13 +7,14 @@ import { debounce } from "../utils/debounce"
 import Boop from "./Boop"
 import { Link } from "gatsby"
 import "../svg-background.css"
+import scrollTo from "gatsby-plugin-smoothscroll"
 
 const NavContainer = styled.div`
   margin: 0 auto;
   width: 100vw;
-  /* background-color: ${colours.dark}; */
+  background-color: ${colours.dark};
   position: fixed;
-  top: 0;
+  /* top: 0; */
   transition: 0.2s linear all;
   z-index: 100;
   .hover-green:hover {
@@ -131,28 +132,34 @@ const NavSection = ({ innerheight }) => {
   const [prevScrollPos, setPrevScrollPos] = useState(0)
   const [visible, setVisible] = useState(true)
 
+  // console.log("toggled: ", toggled)
+  // console.log("prevScrollPos: ", prevScrollPos)
+  // console.log("visible: ", visible)
+
   const style = useSpring({
     transform: "translate(-210vw, 0)",
     height: innerheight * 3,
   })
 
-  // const handleScroll = debounce(() => {
-  //   const currentScrollPos = window.pageYOffset
+  const handleScroll = () => {
+    const currentScrollPos = window.pageYOffset
 
-  //   setVisible(
-  //     toggled
-  //       ? true
-  //       : (prevScrollPos > currentScrollPos &&
-  //           prevScrollPos - currentScrollPos > 70) ||
-  //           currentScrollPos < 10
-  //   )
-  //   setPrevScrollPos(currentScrollPos)
-  // }, 100)
+    setVisible(
+      (prevScrollPos > currentScrollPos &&
+        prevScrollPos - currentScrollPos > 100) ||
+        currentScrollPos < 10
+    )
 
-  // useEffect(() => {
-  //   window.addEventListener("scroll", handleScroll)
-  //   return () => window.removeEventListener("scroll", handleScroll)
-  // }, [prevScrollPos, visible, handleScroll])
+    setPrevScrollPos(currentScrollPos)
+  }
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll)
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+    }
+  }, [prevScrollPos, visible, handleScroll])
 
   return (
     <NavContainer style={{ top: visible ? "0" : "-100px" }}>
@@ -174,34 +181,44 @@ const NavSection = ({ innerheight }) => {
         >
           <div>
             <Boop rotation={10} timing={100}>
-              <Link
-                to="/#about"
+              <a
                 onClick={() => {
                   setToggled(!toggled)
+                  scrollTo("#home-section")
+                }}
+              >
+                home<span className="green">.</span>
+              </a>
+            </Boop>
+            <Boop rotation={10} timing={100}>
+              <a
+                onClick={() => {
+                  setToggled(!toggled)
+                  scrollTo("#about-section")
                 }}
               >
                 about<span className="yellow">.</span>
-              </Link>
+              </a>
             </Boop>
             <Boop rotation={10} timing={100}>
-              <Link
-                to="/#work"
+              <a
                 onClick={() => {
                   setToggled(!toggled)
+                  scrollTo("#work-section")
                 }}
               >
                 work<span className="red">.</span>
-              </Link>
+              </a>
             </Boop>
             <Boop rotation={10} timing={100}>
-              <Link
-                to="/#contact"
+              <a
                 onClick={() => {
                   setToggled(!toggled)
+                  scrollTo("#contact-section")
                 }}
               >
                 contact<span className="green">.</span>
-              </Link>
+              </a>
             </Boop>
           </div>
         </HiddenMenu>

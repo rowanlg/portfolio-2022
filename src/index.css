@@ -6,16 +6,6 @@
   font-family: "Montserrat";
 }
 body {
-  background-color: #160c17;
+  background-color: #140c16;
   overflow-x: hidden;
-  /* min-height: 100vh; */
 }
-
-/* .container {
-  overflow-y: scroll;
-  scroll-snap-type: y mandatory;
-}
-.container div {
-  scroll-snap-align: start;
-  height: 100vh;
-} */

@@ -217,7 +217,7 @@ const MainSection = ({ innerheight }) => {
   }, [])
 
   return (
-    <Main className="snap" style={{ height: innerheight }} id="about">
+    <Main style={{ height: innerheight }} id="home-section">
       <BackgroundImgContainer
         style={
           loaded

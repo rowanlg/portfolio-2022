@@ -6,17 +6,16 @@ export const WorkContainer = styled.section`
   overflow-y: auto;
 
   img {
-    cursor: pointer;
     border-radius: 5px;
   }
   .border-red {
-    /* border: 2px solid rgba(232, 95, 92, 0.6); */
+    border: 2px solid rgba(232, 95, 92, 0.5);
   }
   .border-green {
-    /* border: 2px solid rgba(65, 157, 120, 0.6); */
+    border: 2px solid rgba(65, 157, 120, 0.5);
   }
   .border-yellow {
-    /* border: 2px solid rgba(247, 179, 43, 0.6); */
+    border: 2px solid rgba(247, 179, 43, 0.5);
   }
   .work-section {
     /* display: grid;
@@ -185,7 +184,7 @@ export const WorkContainer = styled.section`
 
         .featured {
           color: ${colours.yellow};
-          font-family: "Fira Code", monospace;
+          font-family: "Source Code Pro", monospace;
           font-weight: 600;
           font-size: 0.6rem;
           @media screen and (min-width: 500px) {
@@ -220,7 +219,7 @@ export const WorkContainer = styled.section`
       width: 100%;
       margin-right: -5vw;
       li {
-        font-family: "Fira Code", monospace;
+        font-family: "Source Code Pro", monospace;
         font-weight: 200;
       }
       @media screen and (min-width: 500px) {
@@ -272,7 +271,7 @@ export const WorkContainer = styled.section`
     }
     .text-stack {
       z-index: 2;
-      font-family: "Fira Code", monospace;
+      font-family: "Source Code Pro", monospace;
       font-weight: 300;
       font-size: 0.6rem;
       margin-bottom: 1rem;
@@ -307,7 +306,6 @@ export const Work = styled.div`
   transition: opacity 1s ease-in;
   transition-delay: 300ms;
   /* height: 100vh; */
-  scroll-snap-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -331,5 +329,11 @@ export const PageIndicators = styled.div`
     border-radius: 10px;
     margin: 1rem 0;
     background-color: ${colours.light};
+  }
+  .dot {
+    cursor: pointer;
+  }
+  .dot:hover {
+    background-color: ${colours.yellow} !important;
   }
 `

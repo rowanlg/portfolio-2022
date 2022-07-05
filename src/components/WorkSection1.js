@@ -7,9 +7,9 @@ import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons"
 import { faGithubSquare } from "@fortawesome/free-brands-svg-icons"
 import "../svg-background.css"
 import { WorkContainer, PageIndicators, Work } from "./WorkStyles"
+import scrollTo from "gatsby-plugin-smoothscroll"
 
 const WorkSection1 = ({ innerheight }) => {
-  const [hover, setHover] = useState("")
   const [ref, isVisible] = useInView({
     threshold: 0.2,
   })
@@ -27,30 +27,35 @@ const WorkSection1 = ({ innerheight }) => {
   })
 
   return (
-    <WorkContainer id="work" ref={allinView}>
+    <WorkContainer ref={allinView} id="work-1">
       <PageIndicators
         style={{ opacity: isAllVisible ? "1" : "0", height: innerheight }}
       >
         <div
+          className="dot"
           style={
             isVisible
               ? { opacity: "1", width: "12px", height: "12px" }
               : { opacity: "0.5" }
           }
+          onClick={() => {
+            if (!isVisible) {
+              scrollTo("#work-1")
+            }
+          }}
         />
         <div
+          className="dot"
           style={
             isVisible2
               ? { opacity: "1", width: "12px", height: "12px" }
               : { opacity: "0.5" }
           }
-        />
-        <div
-          style={
-            isVisible3
-              ? { opacity: "1", width: "12px", height: "12px" }
-              : { opacity: "0.5" }
-          }
+          onClick={() => {
+            if (!isVisible2) {
+              scrollTo("#work-2")
+            }
+          }}
         />
       </PageIndicators>
       <Work
@@ -60,6 +65,7 @@ const WorkSection1 = ({ innerheight }) => {
           height: innerheight,
         }}
         className="background-1"
+        id="work-section"
       >
         <div className="work-section">
           <StaticImage
@@ -100,7 +106,7 @@ const WorkSection1 = ({ innerheight }) => {
             </div>
 
             <div className="text-box text-box-right mobile-hide">
-              <div className="border-red">
+              <div className="border-yellow">
                 <p>
                   One of my first freelance web design and development jobs. I
                   decided that instead of the client requesting changes to their

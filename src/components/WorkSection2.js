@@ -6,9 +6,9 @@ import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons"
 import { faGithubSquare } from "@fortawesome/free-brands-svg-icons"
 import "../svg-background.css"
 import { WorkContainer, PageIndicators, Work } from "./WorkStyles"
+import scrollTo from "gatsby-plugin-smoothscroll"
 
 const WorkSection2 = ({ innerheight }) => {
-  const [hover, setHover] = useState("")
   const [ref, isVisible] = useInView({
     threshold: 0.2,
   })
@@ -26,30 +26,35 @@ const WorkSection2 = ({ innerheight }) => {
   })
 
   return (
-    <WorkContainer ref={allinView}>
+    <WorkContainer ref={allinView} id="work-2">
       <PageIndicators
         style={{ opacity: isAllVisible ? "1" : "0", height: innerheight }}
       >
         <div
+          className="dot"
           style={
             isVisible
               ? { opacity: "1", width: "12px", height: "12px" }
               : { opacity: "0.5" }
           }
+          onClick={() => {
+            if (!isVisible) {
+              scrollTo("#work-1")
+            }
+          }}
         />
         <div
+          className="dot"
           style={
             isVisible2
               ? { opacity: "1", width: "12px", height: "12px" }
               : { opacity: "0.5" }
           }
-        />
-        <div
-          style={
-            isVisible3
-              ? { opacity: "1", width: "12px", height: "12px" }
-              : { opacity: "0.5" }
-          }
+          onClick={() => {
+            if (!isVisible2) {
+              scrollTo("#work-2")
+            }
+          }}
         />
       </PageIndicators>
 
@@ -74,14 +79,14 @@ const WorkSection2 = ({ innerheight }) => {
             <div className="title-area title-left">
               <div className="svg-container">
                 <a
-                  href="https://github.com/rowanlg/asado-barca-v7"
+                  href="https://github.com/rowanlg/bald-flavours"
                   target="_blank"
                   rel="noreferrer noopener"
                 >
                   <FontAwesomeIcon icon={faGithubSquare} className="svg-left" />
                 </a>
                 <a
-                  href="https://asadobarcelona.com/"
+                  href="https://baldflavours.com/"
                   target="_blank"
                   rel="noreferrer noopener"
                 >
@@ -91,12 +96,14 @@ const WorkSection2 = ({ innerheight }) => {
                   />
                 </a>
               </div>
-              <p className="featured">Featured Project</p>
+              <p className="featured" style={{ color: "#E8873D" }}>
+                Featured Project
+              </p>
               <h3>Bald Flavours</h3>
             </div>
 
             <div className="text-box text-box-left mobile-hide">
-              <div className="border-green">
+              <div style={{ border: "2px solid #E8873D" }}>
                 <p>
                   A full blog site, with backend via Netlify, for a food writer
                   from Bristol. The site allows them to publish reviews and
@@ -114,13 +121,13 @@ const WorkSection2 = ({ innerheight }) => {
           </div>
           <ul className="mobile-list">
             <li>Blazingly fast Gatsby site</li>
-            <li>Near perfect lighthouse score</li>
-            <li>Large bg image handling</li>
-            <li>Contentful CMS backend</li>
+            <li>Blog programatically handled with GraphQL</li>
+            <li>Light/Dark mode</li>
+            <li>Netlify CMS backend</li>
             <li>Effective SEO</li>
           </ul>
           <div className="text-stack text-stack-left mobile-show">
-            React Gatsby CSS-in-JS Contentful GraphQL
+            React Gatsby Sass Netlify GraphQL
           </div>
         </div>
       </Work>

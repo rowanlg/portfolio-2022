@@ -166,16 +166,16 @@ const ContactFormContainer = styled.div`
 const ContactSection = ({ innerheight }) => {
   return (
     <ContactContainer
-      id="contact"
-      className="snap background-contact"
+      className="background-contact"
       style={{ minHeight: innerheight }}
+      id="contact-section"
     >
       <div className="flex-container">
         <div className="contact-header background-1">
           <h2>Let's Chat!</h2>
           <p>Send a message here, and I’ll get back in touch asap :)</p>
         </div>
-        <ContactFormContainer className="background-2">
+        <ContactFormContainer className="background-2" id="about">
           <form name="contact" method="POST" data-netlify="true">
             <h4>Contact Form</h4>
             <input type="hidden" name="form-name" value="contact" />
