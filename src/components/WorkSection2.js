@@ -7,7 +7,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons"
 import { faGithubSquare } from "@fortawesome/free-brands-svg-icons"
 import "../svg-background.css"
-import Div100vh from "react-div-100vh"
 
 const WorkContainer = styled.section`
   transition: all 1s linear;
@@ -189,6 +188,7 @@ const WorkContainer = styled.section`
           font-size: 0.6rem;
           @media screen and (min-width: 500px) {
             font-size: 0.8rem;
+            margin-bottom: 0.4rem;
           }
         }
       }
@@ -265,7 +265,7 @@ const WorkContainer = styled.section`
 const Work = styled.div`
   transition: opacity 1s ease-in;
   transition-delay: 300ms;
-  height: 100vh;
+  /* height: 100vh; */
   scroll-snap-align: center;
   display: flex;
   align-items: center;
@@ -278,7 +278,7 @@ const PageIndicators = styled.div`
   right: 0;
   top: 0;
   width: 50px;
-  height: 100vh;
+  /* height: 100vh; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -293,7 +293,7 @@ const PageIndicators = styled.div`
   }
 `
 
-const WorkSection2 = () => {
+const WorkSection2 = ({ innerheight }) => {
   const [hover, setHover] = useState("")
   const [ref, isVisible] = useInView({
     threshold: 0.2,
@@ -313,7 +313,9 @@ const WorkSection2 = () => {
 
   return (
     <WorkContainer className="snap" id="work" ref={allinView}>
-      <PageIndicators style={{ opacity: isAllVisible ? "1" : "0" }}>
+      <PageIndicators
+        style={{ opacity: isAllVisible ? "1" : "0", height: innerheight }}
+      >
         <div
           style={
             isVisible
@@ -340,6 +342,7 @@ const WorkSection2 = () => {
         ref={ref}
         style={{
           opacity: isVisible ? "1" : "0",
+          height: innerheight,
         }}
         className="background-1"
       >
@@ -378,7 +381,7 @@ const WorkSection2 = () => {
                 </a>
               </div>
               <p className="featured">Featured Project</p>
-              <h3>Asado Barcelona</h3>
+              <h3>Asado Barcelona{innerheight}</h3>
             </div>
 
             <div className="text-box text-box-right mobile-hide">
@@ -408,6 +411,7 @@ const WorkSection2 = () => {
         ref={ref2}
         style={{
           opacity: isVisible2 ? "1" : "0",
+          height: innerheight,
         }}
         className="background-2"
       >
@@ -469,6 +473,7 @@ const WorkSection2 = () => {
         ref={ref3}
         style={{
           opacity: isVisible3 ? "1" : "0",
+          height: innerheight,
         }}
         className="background-3"
       >

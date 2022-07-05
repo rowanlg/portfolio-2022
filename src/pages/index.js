@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import NavSection from "../components/NavSection"
 import styled from "styled-components"
 import { Helmet } from "react-helmet"
@@ -9,6 +9,7 @@ import WorkSection from "../components/WorkSection"
 import ContactSection from "../components/ContactSection"
 import FooterSection from "../components/FooterSection"
 import WorkSection2 from "../components/WorkSection2"
+import useWindowSize from "../utils/useWindowSize"
 
 const Main = styled.main`
   background: rgb(37, 20, 38);
@@ -22,7 +23,6 @@ const Main = styled.main`
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
   position: relative;
-  max-height: 100vh;
   overflow-y: auto;
   section.snap {
     scroll-snap-align: start;
@@ -32,8 +32,9 @@ const Main = styled.main`
 `
 
 export default function Home() {
+  const innerheight = useWindowSize().height
   return (
-    <Main id="about">
+    <Main id="about" style={{ height: innerheight }}>
       <Helmet htmlAttributes={{ lang: "en" }}>
         <meta charSet="utf-8" />
         <meta
@@ -44,9 +45,9 @@ export default function Home() {
         <link rel="canonical" href="http://r0o.dev" />
       </Helmet>
       <NavSection />
-      <MainSection />
+      <MainSection innerheight={innerheight} />
       {/* <WorkSection /> */}
-      <WorkSection2 />
+      <WorkSection2 innerheight={innerheight} />
       {/* <ContactSection /> */}
       {/* <FooterSection /> */}
     </Main>

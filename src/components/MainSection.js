@@ -4,11 +4,9 @@ import MainGraphic from "../assets/main-graphic.png"
 import { colours } from "../utils/colours"
 import { StaticImage } from "gatsby-plugin-image"
 import Icons from "./Icons"
-import Div100vh from "react-div-100vh"
 
 const Main = styled.section`
   width: 100vw;
-  height: 100vh;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(4, 1fr);
@@ -208,7 +206,7 @@ const TextRight = styled.div`
   }
 `
 
-const MainSection = () => {
+const MainSection = ({ innerheight }) => {
   const [loaded, setLoaded] = useState(false)
   const [timer, setTimer] = useState(false)
   useEffect(() => {
@@ -219,64 +217,62 @@ const MainSection = () => {
   }, [])
 
   return (
-    <Div100vh>
-      <Main className="snap">
-        <BackgroundImgContainer
-          style={
-            loaded
-              ? timer
-                ? { opacity: "0.8" }
-                : { opacity: "1" }
-              : { opacity: "0" }
-          }
-        >
-          <StaticImage
-            src="../assets/main-graphic5.png"
-            alt="Backround Logo"
-            placeholder="tracedSVG"
-            width={800}
-          />
-        </BackgroundImgContainer>
-        <TextLeft
-          style={
-            loaded
-              ? { transform: "translate(0, 0)", opacity: "1" }
-              : { opacity: "0" }
-          }
-        >
-          <p>
-            <b>
-              <em>efficiently</em>
-              <span style={{ color: colours.yellow }}>,</span>
-            </b>{" "}
-            through{" "}
-            <b>
-              new perspectives<span style={{ color: colours.green }}>,</span>
-            </b>{" "}
-            and to an{" "}
-            <b>
-              <em>extremely</em> high standard
-              <span style={{ color: colours.red }}>.</span>
-            </b>
-          </p>
-        </TextLeft>
-        <TextRight
-          style={
-            loaded
-              ? { transform: "translate(0, 0)", opacity: "1" }
-              : { opacity: "0" }
-          }
-        >
-          <h1>
-            {" "}
-            I build things that help <em>connect people</em>
+    <Main className="snap" style={{ height: innerheight }}>
+      <BackgroundImgContainer
+        style={
+          loaded
+            ? timer
+              ? { opacity: "0.8" }
+              : { opacity: "1" }
+            : { opacity: "0" }
+        }
+      >
+        <StaticImage
+          src="../assets/main-graphic5.png"
+          alt="Backround Logo"
+          placeholder="tracedSVG"
+          width={800}
+        />
+      </BackgroundImgContainer>
+      <TextLeft
+        style={
+          loaded
+            ? { transform: "translate(0, 0)", opacity: "1" }
+            : { opacity: "0" }
+        }
+      >
+        <p>
+          <b>
+            <em>efficiently</em>
             <span style={{ color: colours.yellow }}>,</span>
-          </h1>
-        </TextRight>
-        <Icons timer={timer} />
-        {/* <div className="breaker" /> */}
-      </Main>
-    </Div100vh>
+          </b>{" "}
+          through{" "}
+          <b>
+            new perspectives<span style={{ color: colours.green }}>,</span>
+          </b>{" "}
+          and to an{" "}
+          <b>
+            <em>extremely</em> high standard
+            <span style={{ color: colours.red }}>.</span>
+          </b>
+        </p>
+      </TextLeft>
+      <TextRight
+        style={
+          loaded
+            ? { transform: "translate(0, 0)", opacity: "1" }
+            : { opacity: "0" }
+        }
+      >
+        <h1>
+          {" "}
+          I build things that help <em>connect people</em>
+          <span style={{ color: colours.yellow }}>,</span>
+        </h1>
+      </TextRight>
+      <Icons timer={timer} />
+      {/* <div className="breaker" /> */}
+    </Main>
   )
 }
 
