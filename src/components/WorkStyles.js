@@ -3,8 +3,8 @@ import { colours } from "../utils/colours"
 
 export const WorkContainer = styled.section`
   transition: all 1s linear;
-  overflow-y: auto;
-  /* @import "~react-image-gallery/styles/css/image-gallery.css"; */
+  overflow-y: hidden;
+  height: auto;
 
   img {
     border-radius: 5px;
@@ -329,24 +329,40 @@ export const PageIndicators = styled.div`
   position: fixed;
   right: 0;
   top: 0;
-  width: 50px;
+  width: 35px;
   /* height: 100vh; */
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  @media screen and (min-width: 500px) {
+    width: 50px;
+  }
   div {
     transition: all 1s ease-in;
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
     border-radius: 10px;
     margin: 1rem 0;
     background-color: ${colours.light};
+    @media screen and (min-width: 500px) {
+      width: 10px;
+      height: 10px;
+    }
+  }
+
+  .focussed {
+    width: 10px;
+    height: 10px;
+    @media screen and (min-width: 500px) {
+      width: 12px;
+      height: 12px;
+    }
   }
   .dot {
     cursor: pointer;
   }
-  .dot:hover {
+  /* .dot:hover {
     background-color: ${colours.yellow} !important;
-  }
+  } */
 `

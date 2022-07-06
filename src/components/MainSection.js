@@ -140,12 +140,12 @@ const TextLeft = styled.div`
     }
   }
   p {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     width: 150%;
     font-weight: 400;
 
     @media screen and (min-width: 500px) {
-      font-size: 0.8rem;
+      font-size: 1rem;
       width: auto;
       margin-left: 1rem;
       max-width: 250px;
@@ -184,9 +184,9 @@ const TextRight = styled.div`
   transition-delay: 300ms;
   h1 {
     font-weight: 800;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     @media screen and (min-width: 500px) {
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       max-width: 270px;
     }
     @media screen and (min-width: 850px) {

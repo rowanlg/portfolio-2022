@@ -47,12 +47,8 @@ const WorkSection2 = ({ innerheight }) => {
         style={{ opacity: isAllVisible ? "1" : "0", height: innerheight }}
       >
         <div
-          className="dot"
-          style={
-            isVisible
-              ? { opacity: "1", width: "12px", height: "12px" }
-              : { opacity: "0.5" }
-          }
+          className={isVisible ? "focussed dot" : "dot"}
+          style={isVisible ? { opacity: "1" } : { opacity: "0.5" }}
           onClick={() => {
             if (!isVisible) {
               scrollTo("#work-1")
@@ -60,12 +56,8 @@ const WorkSection2 = ({ innerheight }) => {
           }}
         />
         <div
-          className="dot"
-          style={
-            isVisible2
-              ? { opacity: "1", width: "12px", height: "12px" }
-              : { opacity: "0.5" }
-          }
+          className={isVisible2 ? "focussed dot" : "dot"}
+          style={isVisible2 ? { opacity: "1" } : { opacity: "0.5" }}
           onClick={() => {
             if (!isVisible2) {
               scrollTo("#work-2")
@@ -73,12 +65,8 @@ const WorkSection2 = ({ innerheight }) => {
           }}
         />
         <div
-          className="dot"
-          style={
-            isVisible3
-              ? { opacity: "1", width: "12px", height: "12px" }
-              : { opacity: "0.5" }
-          }
+          className={isVisible3 ? "focussed dot" : "dot"}
+          style={isVisible3 ? { opacity: "1" } : { opacity: "0.5" }}
           onClick={() => {
             if (!isVisible3) {
               scrollTo("#work-3")
