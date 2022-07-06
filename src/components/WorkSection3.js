@@ -79,7 +79,7 @@ const WorkSection3 = ({ innerheight }) => {
         ref={ref3}
         style={{
           opacity: isVisible3 ? "1" : "0",
-          height: innerheight,
+          minHeight: innerheight,
         }}
         className="background-3"
         id="work-section"
