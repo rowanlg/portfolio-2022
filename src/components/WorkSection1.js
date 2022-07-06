@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react"
 import { StaticImage } from "gatsby-plugin-image"
-import { colours } from "../utils/colours"
 import { useInView } from "react-hook-inview"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons"
@@ -73,6 +72,19 @@ const WorkSection1 = ({ innerheight }) => {
             }
           }}
         />
+        <div
+          className="dot"
+          style={
+            isVisible3
+              ? { opacity: "1", width: "12px", height: "12px" }
+              : { opacity: "0.5" }
+          }
+          onClick={() => {
+            if (!isVisible3) {
+              scrollTo("#work-3")
+            }
+          }}
+        />
       </PageIndicators>
       <Work
         ref={ref}
@@ -84,26 +96,19 @@ const WorkSection1 = ({ innerheight }) => {
         id="work-section"
       >
         <div className="work-section">
-          {/* <StaticImage
-            src="../assets/1-asado.png"
-            alt="Asado Barcelona Demo Image"
-            placeholder="blurred"
-            layout="constrained"
-            className="image image-left"
-          /> */}
           <div className="image image-left">
             {isVisible ? (
               <Slider {...settings}>
                 <StaticImage
                   src="../assets/1-asado.png"
-                  alt="Asado Barcelona Demo Image"
+                  alt="Asado Barcelona Image A"
                   placeholder="blurred"
                   layout="constrained"
                   className="image image-left"
                 />
                 <StaticImage
                   src="../assets/1-asado-b.png"
-                  alt="Asado Barcelona Demo Image"
+                  alt="Asado Barcelona Image B"
                   placeholder="blurred"
                   layout="constrained"
                   className="image image-left"

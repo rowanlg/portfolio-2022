@@ -144,6 +144,7 @@ export const WorkContainer = styled.section`
         margin-top: 1rem;
         h3 {
           font-size: 1rem;
+          text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
         }
         @media screen and (min-width: 500px) {
           h3 {

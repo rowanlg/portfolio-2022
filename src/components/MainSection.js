@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react"
 import styled from "styled-components"
-import MainGraphic from "../assets/main-graphic.png"
 import { colours } from "../utils/colours"
 import { StaticImage } from "gatsby-plugin-image"
 import Icons from "./Icons"
@@ -228,7 +227,7 @@ const MainSection = ({ innerheight }) => {
         }
       >
         <StaticImage
-          src="../assets/main-graphic5.png"
+          src="../assets/main-graphic.png"
           alt="Backround Logo"
           placeholder="tracedSVG"
           width={800}

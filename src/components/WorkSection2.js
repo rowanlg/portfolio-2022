@@ -72,6 +72,19 @@ const WorkSection2 = ({ innerheight }) => {
             }
           }}
         />
+        <div
+          className="dot"
+          style={
+            isVisible3
+              ? { opacity: "1", width: "12px", height: "12px" }
+              : { opacity: "0.5" }
+          }
+          onClick={() => {
+            if (!isVisible3) {
+              scrollTo("#work-3")
+            }
+          }}
+        />
       </PageIndicators>
 
       <Work
@@ -83,28 +96,19 @@ const WorkSection2 = ({ innerheight }) => {
         className="background-2"
       >
         <div className="work-section">
-          {/* <StaticImage
-            src="../assets/2-bf.png"
-            alt="Bald Flavours Demo Image"
-            placeholder="blurred"
-            layout="constrained"
-            width={800}
-            className="image image-right"
-          /> */}
-
           <div className="image image-right">
             {isVisible2 ? (
               <Slider {...settings}>
                 <StaticImage
                   src="../assets/2-bf.png"
-                  alt="Asado Barcelona Demo Image"
+                  alt="Bald Flavours Image A"
                   placeholder="blurred"
                   layout="constrained"
                   className="image image-left"
                 />
                 <StaticImage
                   src="../assets/2-bf-b.png"
-                  alt="Asado Barcelona Demo Image"
+                  alt="Bald Flavours Image B"
                   placeholder="blurred"
                   layout="constrained"
                   className="image image-left"
