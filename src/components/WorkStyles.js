@@ -253,7 +253,7 @@ export const WorkContainer = styled.section`
       align-items: center;
       font-weight: 200;
       border-radius: 5px;
-      max-width: 500px;
+      max-width: 600px;
       display: none;
       @media screen and (max-width: 500px) {
         display: none;
@@ -264,6 +264,10 @@ export const WorkContainer = styled.section`
       @media screen and (min-width: 1040px) {
         max-width: auto;
         display: flex;
+      }
+      p {
+        font-family: "Source Code Pro", monospace;
+        font-weight: 200;
       }
       div {
         background-color: rgb(22, 12, 23, 0.8);

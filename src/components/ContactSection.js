@@ -54,28 +54,30 @@ const ContactContainer = styled.section`
     .hello {
       font-size: 1.2rem;
       font-weight: 800;
+      margin-top: 0;
+      margin-right: -0.5rem;
       span {
         position: relative;
       }
       .shadow-red {
-        text-shadow: -5px 5px 0px rgba(232, 135, 61, 0.9),
-          -10px 10px 0px rgba(247, 179, 43, 0.8),
-          -15px 15px 0px rgba(65, 157, 120, 0.7);
+        text-shadow: -3px 3px 0px rgba(232, 135, 61, 1),
+          -6px 6px 0px rgba(247, 179, 43, 1), -9px 9px 0px rgba(65, 157, 120, 1),
+          -12px 12px 0px rgba(232, 95, 92, 1);
       }
       .shadow-orange {
-        text-shadow: -5px 5px 0px rgba(247, 179, 43, 0.9),
-          -10px 10px 0px rgba(65, 157, 120, 0.8),
-          -15px 15px 0px rgba(232, 95, 92, 0.7);
+        text-shadow: -3px 3px 0px rgba(247, 179, 43, 1),
+          -6px 6px 0px rgba(65, 157, 120, 1), -9px 9px 0px rgba(232, 95, 92, 1),
+          -12px 12px 0px rgba(65, 157, 120, 1);
       }
       .shadow-yellow {
-        text-shadow: -5px 5px 0px rgba(65, 157, 120, 0.9),
-          -10px 10px 0px rgba(232, 95, 92, 0.8),
-          -15px 15px 0px rgba(232, 135, 61, 0.7);
+        text-shadow: -3px 3px 0px rgba(65, 157, 120, 1),
+          -6px 6px 0px rgba(232, 95, 92, 1), -9px 9px 0px rgba(232, 135, 61, 1),
+          -12px 12px 0px rgba(247, 179, 43, 1);
       }
       .shadow-green {
-        text-shadow: -5px 5px 0px rgba(232, 95, 92, 0.9),
-          -10px 10px 0px rgba(232, 135, 61, 0.8),
-          -15px 15px 0px rgba(247, 179, 43, 0.7);
+        text-shadow: -3px 3px 0px rgba(232, 95, 92, 1),
+          -6px 6px 0px rgba(232, 135, 61, 1), -9px 9px 0px rgba(247, 179, 43, 1),
+          -12px 12px 0px rgba(65, 157, 120, 1);
       }
       p {
         font-size: 0.8rem;
@@ -105,6 +107,7 @@ const ContactFormContainer = styled.div`
   align-items: center;
   margin-bottom: 50px;
   position: relative;
+
   @media screen and (min-width: 500px) {
     border-radius: 5px;
     margin: 0 auto 50px auto;
@@ -112,6 +115,8 @@ const ContactFormContainer = styled.div`
   }
   @media screen and (min-width: 1000px) {
     margin: auto;
+    padding: 0 1rem;
+    width: 550px;
   }
   form {
     color: ${colours.dark};
@@ -173,10 +178,10 @@ const ContactFormContainer = styled.div`
         outline-color: ${colours.red};
       }
       .border {
-        border: 2px solid rgb(232, 95, 92, 0.25);
+        border: 2px solid #90c7b1;
       }
       .filled {
-        background-color: #f6d3d3;
+        background-color: #90c7b1;
         /* border: 2px solid rgb(232, 95, 92, 0.25); */
         border: none;
       }
@@ -215,7 +220,10 @@ const ContactSection = ({ innerheight }) => {
               className="code-text"
               style={{ fontWeight: 200, fontSize: "1.2rem" }}
             >
-              or just say<span style={{ color: colours.green }}>,</span> <br />
+              or just say
+              <span style={{ color: colours.green, fontWeight: 500 }}>.</span>
+              <span style={{ color: colours.red, fontWeight: 500 }}>.</span>
+              <span style={{ color: colours.yellow, fontWeight: 500 }}>.</span>
             </span>
             {/* <span style={{ color: colours.red }}>or</span>{" "}
             <span style={{ color: colours.green }}>just</span>{" "}
@@ -269,7 +277,7 @@ const ContactSection = ({ innerheight }) => {
             <span
               className="shadow-green"
               style={{
-                color: colours.green,
+                color: colours.cinnabar,
                 fontSize: "2.5rem",
                 zIndex: 5,
               }}
