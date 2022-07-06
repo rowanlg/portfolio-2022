@@ -39,7 +39,7 @@ export default function Home() {
           content="Portfolio site showing the work of r0o_dev"
         />
         <title>r0o.dev - Portfolio Site</title>
-        <link rel="canonical" href="http://r0o.dev" />
+        <link rel="canonical" href="https://r0o.dev" />
       </Helmet>
 
       <NavSection innerheight={innerheight} />
