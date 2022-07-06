@@ -230,7 +230,11 @@ export const WorkContainer = styled.section`
       max-width: 500px;
       order: 5;
       width: 100%;
-      margin-right: -5vw;
+      /* margin-right: -5vw; */
+      background-color: rgba(20, 12, 22, 0.7);
+      padding: 1.5rem 0rem 1.5rem 2rem;
+      border-radius: 5px;
+      margin: auto;
       li {
         font-family: "Source Code Pro", monospace;
         font-weight: 200;

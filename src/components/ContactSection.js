@@ -29,7 +29,7 @@ const ContactContainer = styled.section`
     border-radius: 5px;
     background-color: rgb(22, 12, 23, 1);
     width: auto;
-    padding: 6rem 0 4rem;
+    padding: 6rem 0 6rem;
     @media screen and (min-width: 500px) {
       width: 500px;
       height: 300px;
@@ -41,14 +41,46 @@ const ContactContainer = styled.section`
       margin-bottom: 0;
       padding: 6rem 0 6rem;
     }
-    h2 {
+    h3 {
       font-size: 1.2rem;
       margin-bottom: 0.2rem;
       margin-top: 1rem;
+      max-width: 300px;
+      .code-text {
+        font-family: "Source Code Pro", monospace;
+        /* font-weight: 500; */
+      }
     }
-    p {
-      font-size: 0.8rem;
-      max-width: 350px;
+    .hello {
+      font-size: 1.2rem;
+      font-weight: 800;
+      span {
+        position: relative;
+      }
+      .shadow-red {
+        text-shadow: -5px 5px 0px rgba(232, 135, 61, 0.9),
+          -10px 10px 0px rgba(247, 179, 43, 0.8),
+          -15px 15px 0px rgba(65, 157, 120, 0.7);
+      }
+      .shadow-orange {
+        text-shadow: -5px 5px 0px rgba(247, 179, 43, 0.9),
+          -10px 10px 0px rgba(65, 157, 120, 0.8),
+          -15px 15px 0px rgba(232, 95, 92, 0.7);
+      }
+      .shadow-yellow {
+        text-shadow: -5px 5px 0px rgba(65, 157, 120, 0.9),
+          -10px 10px 0px rgba(232, 95, 92, 0.8),
+          -15px 15px 0px rgba(232, 135, 61, 0.7);
+      }
+      .shadow-green {
+        text-shadow: -5px 5px 0px rgba(232, 95, 92, 0.9),
+          -10px 10px 0px rgba(232, 135, 61, 0.8),
+          -15px 15px 0px rgba(247, 179, 43, 0.7);
+      }
+      p {
+        font-size: 0.8rem;
+        max-width: 350px;
+      }
     }
   }
 
@@ -173,8 +205,78 @@ const ContactSection = ({ innerheight }) => {
     >
       <div className="flex-container">
         <div className="contact-header background-3">
-          <h2>Let's Chat!</h2>
-          <p>Send a message here, and I’ll get back in touch asap :)</p>
+          <h3>
+            Schedule a meeting<span style={{ color: colours.red }}>,</span>{" "}
+            <span className="code-text" style={{ fontWeight: 500 }}>
+              arrange a chat<span style={{ color: colours.yellow }}>,</span>
+              <br />
+            </span>{" "}
+            <span
+              className="code-text"
+              style={{ fontWeight: 200, fontSize: "1.2rem" }}
+            >
+              or just say<span style={{ color: colours.green }}>,</span> <br />
+            </span>
+            {/* <span style={{ color: colours.red }}>or</span>{" "}
+            <span style={{ color: colours.green }}>just</span>{" "}
+            <span style={{ color: colours.yellow }}>say</span>{" "} */}
+          </h3>
+          <div className="hello">
+            <span
+              className="shadow-red"
+              style={{ color: colours.red, fontSize: "2.5rem", zIndex: 10 }}
+            >
+              h
+            </span>
+            <span
+              className="shadow-orange"
+              style={{
+                color: colours.orange,
+                fontSize: "2.5rem",
+                zIndex: 9,
+              }}
+            >
+              e
+            </span>
+            <span
+              className="shadow-yellow"
+              style={{
+                color: colours.yellow,
+                fontSize: "2.5rem",
+                zIndex: 8,
+              }}
+            >
+              l
+            </span>
+            <span
+              className="shadow-green"
+              style={{
+                color: colours.green,
+                fontSize: "2.5rem",
+                zIndex: 7,
+              }}
+            >
+              l
+            </span>
+            <span
+              className="shadow-red"
+              style={{ color: colours.red, fontSize: "2.5rem", zIndex: 6 }}
+            >
+              o
+            </span>
+            {/* <span style={{ color: colours.orange, fontSize: "1.4rem" }}>o</span>
+            <span style={{ color: colours.yellow, fontSize: "1.4rem" }}>o</span> */}
+            <span
+              className="shadow-green"
+              style={{
+                color: colours.green,
+                fontSize: "2.5rem",
+                zIndex: 5,
+              }}
+            >
+              !
+            </span>
+          </div>
         </div>
         <ContactFormContainer className="background-2" id="about">
           <form name="contact" method="POST" data-netlify="true">
