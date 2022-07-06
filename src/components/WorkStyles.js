@@ -10,7 +10,7 @@ export const WorkContainer = styled.section`
     border-radius: 5px;
   }
   .border-red {
-    border: 2px solid rgba(232, 95, 92, 0.5);
+    border: 2px solid rgba(232, 95, 92, 0.8);
   }
   .border-green {
     border: 2px solid rgba(65, 157, 120, 0.5);

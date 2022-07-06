@@ -102,7 +102,8 @@ const BackgroundImgContainer = styled.div`
   transition: all 1.6s ease-out;
   @media screen and (min-width: 500px) {
     grid-area: 2 / 3 / 5 / 11;
-    margin-left: -4rem;
+    /* margin-left: -4rem; */
+    margin-top: 3rem;
   }
 `
 
@@ -161,6 +162,7 @@ const TextLeft = styled.div`
     align-items: flex-start;
     justify-content: center;
     margin-left: -0.5rem;
+    margin-top: 3rem;
   }
 `
 
@@ -200,7 +202,7 @@ const TextRight = styled.div`
     /* width: 90%; */
     margin: auto;
     margin-right: 0;
-    margin-top: 10rem;
+    /* margin-top: 10rem; */
     /* max-width: auto; */
   }
 `
