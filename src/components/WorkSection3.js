@@ -10,6 +10,7 @@ import scrollTo from "gatsby-plugin-smoothscroll"
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
+import { colours } from "../utils/colours"
 
 const WorkSection3 = ({ innerheight }) => {
   const [ref, isVisible] = useInView({
@@ -31,7 +32,7 @@ const WorkSection3 = ({ innerheight }) => {
   const settings = {
     dots: false,
     infinite: true,
-    speed: 2000,
+    speed: 1000,
     autoplaySpeed: 7000,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -97,33 +98,29 @@ const WorkSection3 = ({ innerheight }) => {
       >
         <div className="work-section">
           <div className="image image-left">
-            {isVisible3 ? (
-              <Slider {...settings}>
-                <StaticImage
-                  src="../assets/3-allowlist.png"
-                  alt="Allowlist Image A"
-                  placeholder="blurred"
-                  layout="constrained"
-                  className="image image-left"
-                />
-                <StaticImage
-                  src="../assets/3-allowlist-b.png"
-                  alt="Allowlist Image B"
-                  placeholder="blurred"
-                  layout="constrained"
-                  className="image image-left"
-                />
-                <StaticImage
-                  src="../assets/3-allowlist-c.png"
-                  alt="Allowlist Image C"
-                  placeholder="blurred"
-                  layout="constrained"
-                  className="image image-left"
-                />
-              </Slider>
-            ) : (
-              <div />
-            )}
+            <Slider {...settings}>
+              <StaticImage
+                src="../assets/3-allowlist-a.jpg"
+                alt="Allowlist Image A"
+                placeholder="blurred"
+                layout="constrained"
+                className="image image-left"
+              />
+              <StaticImage
+                src="../assets/3-allowlist-b.jpg"
+                alt="Allowlist Image B"
+                placeholder="blurred"
+                layout="constrained"
+                className="image image-left"
+              />
+              <StaticImage
+                src="../assets/3-allowlist-c.jpg"
+                alt="Allowlist Image C"
+                placeholder="blurred"
+                layout="constrained"
+                className="image image-left"
+              />
+            </Slider>
           </div>
           <div className="text-area text-area-right">
             <div className="title-area title-right">
@@ -149,23 +146,27 @@ const WorkSection3 = ({ innerheight }) => {
                   />
                 </a>
               </div>
-              <p className="featured">Featured Project</p>
-              <h3>Allowlist - NFT whitelist app</h3>
+              <p className="featured" style={{ color: colours.red }}>
+                Featured Project
+              </p>
+              <h3>Allowlist App</h3>
+              <p className="extra-info">NFT whitelist app</p>
             </div>
 
             <div className="text-box text-box-right mobile-hide">
-              <div className="border-yellow">
+              <div className="border-red">
                 <p>
-                  One of my first freelance web design and development jobs. I
-                  decided that instead of the client requesting changes to their
-                  site via me, I would build them a backend where they could
-                  change the copy, images and menu themselves. To do this I used
-                  Contentful's CMS with graphQL to query the data inputted into
-                  the CMS' backend and show this programatically via a lighting
-                  fast Gatsby site, and now the client is happy he doesn't have
-                  to pay me for changes haha. I was particularly happy with the
-                  lighthouse scores on this site, achieving an almost perfect
-                  100 across the board.
+                  I noticed that there were limited ways for NFT projects to
+                  collect users addresses, and confirm their identity through
+                  twitter. The only solutions for this cost a lot to use, so I
+                  decided to create my own. At the moment it is a closed backend
+                  for myself, however I will develop the project to allow NFT
+                  creators to log in and create their own allowlist forms
+                  through a dedicated portal. The current features are - Connect
+                  metamask wallet and store address, log in through twitter and
+                  store username, then save these to a database. I would also
+                  like to implement a gate where the user must follow a certain
+                  twitter account or like a certain tweet to continue.
                 </p>
               </div>
             </div>

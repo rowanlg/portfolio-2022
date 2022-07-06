@@ -151,13 +151,19 @@ export const WorkContainer = styled.section`
             font-size: 1.3rem;
           }
         }
+        .extra-info {
+          font-family: "Source Code Pro", monospace;
+          font-weight: 200;
+          font-size: 0.8rem;
+          margin-top: -0.5rem;
+        }
         .svg-container {
           display: flex;
           align-items: flex-end;
           flex-direction: row;
           justify-content: flex-end;
           width: 100%;
-          margin-bottom: -3.2rem;
+          margin-bottom: -4rem;
           @media screen and (min-width: 1040px) {
             justify-content: flex-start;
             width: auto;
@@ -194,9 +200,9 @@ export const WorkContainer = styled.section`
           font-family: "Source Code Pro", monospace;
           font-weight: 600;
           font-size: 0.6rem;
+          margin-bottom: 0.4rem;
           @media screen and (min-width: 500px) {
             font-size: 0.8rem;
-            margin-bottom: 0.4rem;
           }
         }
       }

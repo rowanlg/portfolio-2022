@@ -31,7 +31,7 @@ const WorkSection1 = ({ innerheight }) => {
   const settings = {
     dots: false,
     infinite: true,
-    speed: 2000,
+    speed: 1000,
     autoplaySpeed: 7000,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -97,26 +97,36 @@ const WorkSection1 = ({ innerheight }) => {
       >
         <div className="work-section">
           <div className="image image-left">
-            {isVisible ? (
-              <Slider {...settings}>
-                <StaticImage
-                  src="../assets/1-asado.png"
-                  alt="Asado Barcelona Image A"
-                  placeholder="blurred"
-                  layout="constrained"
-                  className="image image-left"
-                />
-                <StaticImage
-                  src="../assets/1-asado-b.png"
-                  alt="Asado Barcelona Image B"
-                  placeholder="blurred"
-                  layout="constrained"
-                  className="image image-left"
-                />
-              </Slider>
-            ) : (
-              <div />
-            )}
+            <Slider {...settings}>
+              <StaticImage
+                src="../assets/1-asado-a.jpg"
+                alt="Asado Barcelona Image A"
+                placeholder="blurred"
+                layout="constrained"
+                className="image image-left"
+              />
+              <StaticImage
+                src="../assets/1-asado-b.jpg"
+                alt="Asado Barcelona Image B"
+                placeholder="blurred"
+                layout="constrained"
+                className="image image-left"
+              />
+              <StaticImage
+                src="../assets/1-asado-c.jpg"
+                alt="Asado Barcelona Image C"
+                placeholder="blurred"
+                layout="constrained"
+                className="image image-left"
+              />
+              <StaticImage
+                src="../assets/1-asado-d.jpg"
+                alt="Asado Barcelona Image D"
+                placeholder="blurred"
+                layout="constrained"
+                className="image image-left"
+              />
+            </Slider>
           </div>
           <div className="text-area text-area-right">
             <div className="title-area title-right">
@@ -144,6 +154,7 @@ const WorkSection1 = ({ innerheight }) => {
               </div>
               <p className="featured">Featured Project</p>
               <h3>Asado Barcelona</h3>
+              <p className="extra-info">Restaurant website</p>
             </div>
 
             <div className="text-box text-box-right mobile-hide">

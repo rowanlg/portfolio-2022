@@ -31,7 +31,7 @@ const WorkSection2 = ({ innerheight }) => {
   const settings = {
     dots: false,
     infinite: true,
-    speed: 2000,
+    speed: 1000,
     autoplaySpeed: 7000,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -97,26 +97,36 @@ const WorkSection2 = ({ innerheight }) => {
       >
         <div className="work-section">
           <div className="image image-right">
-            {isVisible2 ? (
-              <Slider {...settings}>
-                <StaticImage
-                  src="../assets/2-bf.png"
-                  alt="Bald Flavours Image A"
-                  placeholder="blurred"
-                  layout="constrained"
-                  className="image image-left"
-                />
-                <StaticImage
-                  src="../assets/2-bf-b.png"
-                  alt="Bald Flavours Image B"
-                  placeholder="blurred"
-                  layout="constrained"
-                  className="image image-left"
-                />
-              </Slider>
-            ) : (
-              <div />
-            )}
+            <Slider {...settings}>
+              <StaticImage
+                src="../assets/2-bf-a.jpg"
+                alt="Bald Flavours Image A"
+                placeholder="blurred"
+                layout="constrained"
+                className="image image-left"
+              />
+              <StaticImage
+                src="../assets/2-bf-b.jpg"
+                alt="Bald Flavours Image B"
+                placeholder="blurred"
+                layout="constrained"
+                className="image image-left"
+              />
+              <StaticImage
+                src="../assets/2-bf-c.jpg"
+                alt="Bald Flavours Image C"
+                placeholder="blurred"
+                layout="constrained"
+                className="image image-left"
+              />
+              <StaticImage
+                src="../assets/2-bf-d.jpg"
+                alt="Bald Flavours Image D"
+                placeholder="blurred"
+                layout="constrained"
+                className="image image-left"
+              />
+            </Slider>
           </div>
           <div className="text-area text-area-left">
             <div className="title-area title-left">
@@ -126,7 +136,10 @@ const WorkSection2 = ({ innerheight }) => {
                   target="_blank"
                   rel="noreferrer noopener"
                 >
-                  <FontAwesomeIcon icon={faGithubSquare} className="svg-left" />
+                  <FontAwesomeIcon
+                    icon={faGithubSquare}
+                    className="svg-left link-svg"
+                  />
                 </a>
                 <a
                   href="https://baldflavours.com/"
@@ -143,6 +156,7 @@ const WorkSection2 = ({ innerheight }) => {
                 Featured Project
               </p>
               <h3>Bald Flavours</h3>
+              <p className="extra-info">Food writer blog</p>
             </div>
 
             <div className="text-box text-box-left mobile-hide">
