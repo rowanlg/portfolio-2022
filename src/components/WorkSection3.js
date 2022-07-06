@@ -93,7 +93,7 @@ const WorkSection3 = ({ innerheight }) => {
           opacity: isVisible3 ? "1" : "0",
           height: innerheight,
         }}
-        className="background-1"
+        className="background-3"
         id="work-section"
       >
         <div className="work-section">

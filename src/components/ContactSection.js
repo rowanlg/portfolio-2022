@@ -39,6 +39,7 @@ const ContactContainer = styled.section`
       width: 500px;
       height: 515px;
       margin-bottom: 0;
+      padding: 6rem 0 6rem;
     }
     h2 {
       font-size: 1.2rem;
@@ -171,7 +172,7 @@ const ContactSection = ({ innerheight }) => {
       id="contact-section"
     >
       <div className="flex-container">
-        <div className="contact-header background-1">
+        <div className="contact-header background-3">
           <h2>Let's Chat!</h2>
           <p>Send a message here, and I’ll get back in touch asap :)</p>
         </div>

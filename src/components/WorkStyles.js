@@ -33,7 +33,7 @@ export const WorkContainer = styled.section`
     margin: auto;
     max-width: 90vw;
     border-radius: 5px;
-    max-height: 100vh;
+    /* max-height: 100vh; */
     padding-top: 5rem;
     /* padding-top: 200px; */
     @media screen and (min-width: 700px) {
