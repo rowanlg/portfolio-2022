@@ -28,7 +28,7 @@
     "gatsby-plugin-styled-components": "^5.17.0",
     "gatsby-plugin-typography": "^4.17.0",
     "gatsby-source-filesystem": "^4.17.0",
-    "gatsby-transformer-sharp": "^4.17.0",
+    "gatsby-transformer-sharp": "^4.22.0",
     "normalize.css": "^8.0.1",
     "react": "^16.14.0",
     "react-div-100vh": "^0.7.0",

@@ -9,3 +9,14 @@ body {
   background-color: #140c16;
   overflow-x: hidden;
 }
+/* body::-webkit-scrollbar {
+  z-index: 100;
+}
+
+body::-webkit-scrollbar-track {
+  z-index: 100;
+}
+
+body::-webkit-scrollbar-thumb {
+  z-index: 100;
+} */

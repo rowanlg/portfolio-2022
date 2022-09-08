@@ -56,10 +56,6 @@ export const WorkContainer = styled.section`
       @media screen and (min-width: 700px) {
         max-width: 500px;
       }
-      @media screen and (min-width: 700px) {
-        /* margin: 1rem; */
-        max-width: none;
-      }
     }
     .image-left {
       /* grid-area: 5 / 1 / 8 / 7; */

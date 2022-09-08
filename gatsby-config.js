@@ -19,6 +19,7 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-smoothscroll`,
     `gatsby-plugin-sharp`,
+    "gatsby-transformer-sharp",
     {
       resolve: `gatsby-plugin-styled-components`,
       options: {
@@ -37,6 +38,13 @@ module.exports = {
         rule: {
           include: "/assets/", // See below to configure properly
         },
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `work-images`,
+        path: `${__dirname}/src/assets/work-images`,
       },
     },
   ],

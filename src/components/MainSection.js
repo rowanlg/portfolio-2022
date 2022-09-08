@@ -212,9 +212,10 @@ const MainSection = ({ innerheight }) => {
   const [timer, setTimer] = useState(false)
   useEffect(() => {
     setLoaded(true)
-    setTimeout(() => {
+    const timeout = setTimeout(() => {
       setTimer(true)
     }, 1500)
+    return () => clearTimeout(timeout)
   }, [])
 
   return (

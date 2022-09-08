@@ -16,7 +16,7 @@ const NavContainer = styled.div`
   position: fixed;
   /* top: 0; */
   transition: 0.2s linear all;
-  z-index: 100;
+  z-index: 99;
   .hover-green:hover {
     color: ${colours.green};
   }
