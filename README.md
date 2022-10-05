@@ -12,7 +12,7 @@ Visit site [here](https://r0o.dev)
 - Gatsby
 
 ## Dependancies
-- Check gatsby-config.js
+- Check package.json
 
 ## How to Run
 Install dependancies and run
