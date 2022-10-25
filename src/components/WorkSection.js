@@ -57,7 +57,7 @@ const WorkSection = ({ innerheight }) => {
     threshold: 0.2,
   })
   const [allinView, isAllVisible] = useInView({
-    threshold: 0.2,
+    threshold: 0.1,
   })
 
   console.log("isvisible1: ", isVisible1)
@@ -192,13 +192,13 @@ const WorkSection = ({ innerheight }) => {
       })
 
     return (
-      <WorkContainer ref={allinView} id={`work-${index + 1}`} key={index}>
+      <WorkContainer id={`work-${index + 1}`} key={index}>
         <PageIndicators
           style={{ opacity: isAllVisible ? "1" : "0", height: innerheight }}
         >
           <div
             className={isVisible1 ? "focussed dot" : "dot"}
-            style={isVisible1 ? { opacity: "1" } : { opacity: "0.5" }}
+            style={isVisible1 ? { opacity: "1" } : { opacity: "0.2" }}
             onClick={() => {
               if (!isVisible1) {
                 scrollTo("#work-1")
@@ -207,7 +207,7 @@ const WorkSection = ({ innerheight }) => {
           />
           <div
             className={isVisible2 ? "focussed dot" : "dot"}
-            style={isVisible2 ? { opacity: "1" } : { opacity: "0.5" }}
+            style={isVisible2 ? { opacity: "1" } : { opacity: "0.2" }}
             onClick={() => {
               if (!isVisible2) {
                 scrollTo("#work-2")
@@ -216,7 +216,7 @@ const WorkSection = ({ innerheight }) => {
           />
           <div
             className={isVisible3 ? "focussed dot" : "dot"}
-            style={isVisible3 ? { opacity: "1" } : { opacity: "0.5" }}
+            style={isVisible3 ? { opacity: "1" } : { opacity: "0.2" }}
             onClick={() => {
               if (!isVisible3) {
                 scrollTo("#work-3")
@@ -225,7 +225,7 @@ const WorkSection = ({ innerheight }) => {
           />
           <div
             className={isVisible4 ? "focussed dot" : "dot"}
-            style={isVisible4 ? { opacity: "1" } : { opacity: "0.5" }}
+            style={isVisible4 ? { opacity: "1" } : { opacity: "0.2" }}
             onClick={() => {
               if (!isVisible4) {
                 scrollTo("#work-4")
@@ -234,7 +234,7 @@ const WorkSection = ({ innerheight }) => {
           />
           <div
             className={isVisible5 ? "focussed dot" : "dot"}
-            style={isVisible5 ? { opacity: "1" } : { opacity: "0.5" }}
+            style={isVisible5 ? { opacity: "1" } : { opacity: "0.2" }}
             onClick={() => {
               if (!isVisible5) {
                 scrollTo("#work-5")
@@ -306,7 +306,7 @@ const WorkSection = ({ innerheight }) => {
     )
   })
 
-  return <>{projects}</>
+  return <div ref={allinView}>{projects}</div>
 }
 
 export default WorkSection
